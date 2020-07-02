@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LOCUS</title>
+    <link rel="icon" href="images/home/favicon.ico" type="image/x-icon"/>
+    <!-- <link href="resources/css/jquery-ui-themes.css" type="text/css" rel="stylesheet" /> -->
+    <link rel="stylesheet" type="text/css" href="statics/bootstrap-3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="statics/layui-v2.4.5/layui/css/layui.css" media="all" />
+    
+</head>
+
+<body>
+         <div id="header" style="display: none;"></div>
+    <div id="title-div">
+        <div class="rprt">
+            <div class="content" style="min-height: 400px">
+                <h1>Allele information - <span class="locus">aaeA</span>: <span class="allele">1</span></h1>
+                <div class="box" id="resultspanel">
+                    <dl class="data">
+                        <dt>locus</dt><dd><a  id="locus" class="locus ">aaeA</a></dd><br>
+                        <dt>allele</dt><dd class="allele">1</dd><br>
+                        <dt>sequence</dt><dd class="seq" id="sequence">GTGAAACTAC </dd><br>
+                        <dt>length</dt><dd id="length">933</dd><br>
+                        <dt>status</dt><dd id="status">unchecked</dd><br>
+                        <dt>strain</dt><dd id="strain"></dd><br>
+                    </dl>
+                </div>
+            </div>
+            <table class="layui-hide" id="filelist" lay-filter="filelist"></table>
+            <div id="ss_div">
+            <h2 >Analysis tools:</h2>
+            <div id="ss">
+                <span id="sa"><i class="layui-icon">&#xe62c;</i> Analysis:<a  id="explorer">Locus Explorer</a></span>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer" style="display: none;"></div>
+</body>
+<!-- <script src="resources/scripts/jquery-1.7.1.min.js"></script> -->
+<script src="statics/jquery-1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="statics/bootstrap-3.3.7/js/bootstrap.js"></script>
+<script type="text/javascript" src="statics/layui-v2.4.5/layui/layui.js"></script>
+<script type="text/javascript" src="statics/js/util/commonUtil.js"></script>
+<script src="files/common/librarycommon.js"></script>
+<script src="files/locus/locus.js" /></script>
+<script type="text/html" id="titleTpl">
+  <a href='locus.html?library={{getUrlParam("library")}}&locus={{d.locus}}&Allele={{d.allele}}&file={{getUrlParam("file")}}' class="layui-table-link" target="_black">{{d.allele}}</a>
+</script>
+<link href="files/locus/locus.css" type="text/css" rel="stylesheet" />
+</html>

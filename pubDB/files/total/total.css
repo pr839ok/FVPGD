@@ -1,0 +1,346 @@
+    #home-div {
+        width: 1024px;
+        margin: 0 auto;
+    }
+
+    /*#box{
+    width: 1024px;
+    margin: 0 auto;
+}*/
+    #img-div img {
+        width: 200px;
+        height: 200px;
+        margin-left: 20px;
+        display: inline;
+    }
+
+    #h1-div {
+        display: inline;
+        margin-left: 96px;
+    }
+
+    .dropdown-menu {
+        width: 180px;
+
+    }
+
+    h1 {
+        display: inline;
+    }
+
+    #header-div {
+        width: 1024px;
+        margin: 0 auto;
+    }
+
+    #table-div {
+        width: 900px;
+        margin: 0 auto;
+    }
+
+    #footer-div {
+        /*width: 1024px;*/
+        margin: 0 auto;
+        height: 40px;
+        /* background-image: url(../../images/home/footer_u3.png);*/
+        /* color: black;*/
+        margin-top: 40px;
+
+    }
+
+    h5 {
+        padding-top: 12px;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 11px;
+    }
+
+    #iframe {
+        margin: 0 auto;
+        width: 80%;
+        /*height: 100%;*/
+        border: none;
+    }
+    #fol{
+        position: fixed;
+        top: 60px;
+        right: 90px;
+        background-color: #f2f2f2;
+        min-width: 200px;
+        text-align: center;
+    }
+
+
+
+
+
+
+
+    /*body {
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    overflow: hidden;
+}*/
+
+    .layui-nav {
+        background-color: #fff;
+    }
+
+    .layui-nav .layui-nav-item a {
+        font-size: 24px;
+        color: #393D49;
+    }
+
+    .layui-nav .layui-nav-item a:hover {
+        font-size: 24px;
+        color: #2f0808;
+    }
+
+    .layui-nav .layui-nav-item {
+        width: 196px;
+        text-align: center;
+        color: #393D49;
+    }
+
+    .layui-card-header {
+        font-weight: bold;
+    }
+
+
+
+
+
+    /*body{
+    overflow-y:hidden;
+}*/
+
+    .navbar-default {
+        margin-top: 60px;
+    }
+
+    .navbar {
+        position: relative;
+        min-height: 50px;
+        margin-bottom: 20px;
+        border: 0px solid transparent;
+    }
+
+    .navbar-nav li a {
+        font-size: 24px;
+        font-family: krungthep;
+        font-weight: 800;
+        color: white;
+        height: 57px;
+        line-height: 29px;
+    }
+
+    .navbar-default .navbar-nav>li>a {
+        color: white;
+    }
+
+    .navbar-nav>li {
+        /* float: left;*/
+        width: 16%;
+        text-align: center;
+    }
+
+    #queryT {
+        width: 144px;
+    }
+
+    .navbar-nav {
+        width: 94%;
+        position: relative;
+    }
+
+    .navbar {
+        border-radius: 0px;
+        background-image: url(../../images/home/u5.jpg);
+    }
+
+    #img_3 {
+        width: 65.3%;
+        position: relative;
+        left: 152px;
+        top: -22px;
+    }
+
+    #img_4 {
+        width: 65.3%;
+        position: relative;
+        left: 152px;
+        top: -22px;
+    }
+
+    .col-xs-9 {
+        padding: 0px;
+    }
+
+    .col-sm-9 {
+        padding: 0px;
+    }
+
+    .navbar-collapse {}
+
+    .navbar-brand {
+        background-color: white;
+        float: left;
+    }
+
+    .navbar-brand {
+        float: left;
+        height: 0px;
+        font-size: 18px;
+        line-height: 20px;
+        padding: 0px;
+        width: 15%;
+    }
+
+    .container-fluid {
+        padding-right: 0px;
+        padding-left: 0px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    #img_logo {
+        width: 135%;
+        margin-bottom: 0%;
+        /*margin-left: 36%;
+    margin-top: -36%;*/
+    }
+
+    .container-fluid>.navbar-collapse {
+        margin-right: 0;
+        margin-left: 10%;
+    }
+
+    .tab-h2 {
+
+        color: black;
+        font-weight: 600;
+        font-size: 20px;
+        font-family: krungthep;
+        letter-spacing: 1px;
+
+        text-align: center;
+
+        margin: 45px 0 10px;
+    }
+
+    .tab-p {
+
+        font-size: 12px;
+        font-family: krungthep;
+        letter-spacing: 2px;
+        font-weight: 400;
+        text-align: center;
+
+        color: black;
+
+        margin: 15px 0 0px;
+    }
+
+    #h2_1 {
+        margin-top: 0px;
+    }
+
+    .navbar-nav {
+        margin: 26.5px -15px;
+    }
+
+    .navbar-brand {
+        margin-left: 14%;
+        margin-top: -7.5%;
+    }
+
+    /* 小屏幕（平板，大于等于768px） */
+    @media (min-width: 768px) {
+        .navbar-nav {
+            margin: 7.5px -15px;
+        }
+
+        .navbar-brand {
+            margin-left: 14%;
+            margin-top: -2.5%;
+        }
+
+        .tab-h2 {
+
+            font-size: 30px;
+
+        }
+
+        .tab-p {
+            margin: 15px 0 45px;
+            font-size: 22px;
+        }
+
+        #img_logo {
+            width: 100%;
+            margin-bottom: 0%;
+            /*margin-left: 36%;
+        margin-top: -36%;*/
+        }
+
+        #h2_1 {
+            margin-top: 45px;
+            margin-left: 182px;
+        }
+
+        h5 {
+            font-size: 18px;
+        }
+
+        #queryT {
+            width: 19%;
+        }
+
+
+        #footer-div {
+            background-color: #f2f2f2;
+            min-height: 248px;
+        }
+
+        .layui-col-md3 h4 {
+            text-align: left;
+            color: #724128;
+            font-size: 14px;
+        }
+
+        .layui-col-md3 p {
+            text-align: left;
+        }
+
+    }
+
+    /* 中等屏幕（桌面显示器，大于等于992px） */
+
+    @media (min-width: 992px) {
+
+        .tab-h2 {
+
+            font-size: 28px;
+        }
+
+        .tab-p {
+            margin: 15px 0 45px;
+            font-size: 17px;
+        }
+
+        #img_logo {
+            width: 104%;
+            margin-bottom: 0%;
+            /*margin-left: 36%;
+        margin-top: -36%;*/
+        }
+    }
+
+    #sr {
+        color: black;
+        line-height: 41px;
+        font-weight: 400;
+        min-height: 10px;
+    }

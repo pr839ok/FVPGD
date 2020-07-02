@@ -1,0 +1,156 @@
+dd{
+	display: inline;
+	padding: 0px;
+	margin-left: 20px;
+	font-size: 18px;
+}
+dt{
+	display: inline;
+	padding: 0px;
+	margin-left: 300px;
+	font-weight: bold;
+	font-size: 18px;
+}
+input{
+	display: inline;
+}
+p{
+	display: inline;
+	text-align: center;
+}
+#export_table{
+	color: #337ab7;
+}
+#export_table:hover{
+	color: #23527c;
+}
+
+#ASM{
+	padding-top: 40px;
+	/*padding-bottom: 40px;*/
+	font-weight: 600;
+	font-size: 30px;
+	margin-bottom: 40px;
+	letter-spacing: 1px;
+}
+a{
+	text-decoration: none;
+}
+.rslt{
+	/*width:1000px;*/
+	margin: 0 auto;
+	/*padding-top: 30px;
+	padding-bottom: 80px;*/
+	background-color: white;
+	
+}
+body{
+	background-color: #ccc;
+	padding: 0px;
+	margin: 0px;
+}
+.title{
+	/*margin-left: 300px;
+	margin-top: 30px;*/
+	/*width: 1000px;*/
+	margin: 0 auto;
+	text-align: center;
+	/*padding-top: 40px;*/
+}
+.rprt{
+	padding-top: 0px;
+	/*padding-left: 100px;
+	padding-right: 100px;*/
+	margin: 0px;
+}
+a{
+	text-decoration: none;
+}
+#search_results{
+	/*margin-left: 100px;*/
+	font-size: 40px;
+	text-align: center;
+}
+#tableDetail{
+	margin-left: 58px;
+	padding:8px 0;
+	width: 1000px;
+}
+table{
+	border-width: 1px;
+	border-style: solid;
+	border-color: #e6e6e6;
+}
+#Downloads{
+	margin-left: 39px;
+	font-size: 22px;
+}
+.supp{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+#from_result{
+	width: 1000px;
+	margin:0 auto;
+	margin-top:40px;
+}
+.layui-form-label{
+	width: 242px;
+	font-size: 16px;
+}
+.layui-table{
+	width: 900px;
+}
+#Downloads-list{
+	margin-left: 28px;
+	padding-bottom: 50px;
+}
+.statistics{
+	font-size: 22px;margin-top: 37px;margin-left: 39px;
+}
+#loadFile{
+	width: 317px;
+}
+.layui-table, .layui-table-view {
+margin: 40px 0 0 0;
+}
+.layui-table td{
+	font-size: 16px;
+}
+/* 小屏幕（平板，大于等于768px） */
+@media (max-width: 768px) {
+    #from_result{
+		width: 90%;
+		/*margin: 1px;*/
+	}
+	.title {
+		/*width: 100%;*/
+	}
+	.layui-form-label {
+    width: 130px;
+}
+	.rslt{
+		width: 100%;
+	}
+	.rprt {
+		padding: 0px;
+	}
+	.title {
+    width: 100%;
+}
+#Downloads-list {
+    margin-left: 37px;
+    }
+    .layui-table{
+	width: 100%;
+}
+#loadFile{
+	width: 100%;
+}
+}
+
+/* 中等屏幕（桌面显示器，大于等于992px） */
+@media (max-width: 992px) {
+       
+    }

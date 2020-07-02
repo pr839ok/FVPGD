@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Map</title>
+    <link rel="icon" href="images/home/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="statics/layui-v2.4.5/layui/css/layui.css" media="all" />
+    <!--   <link rel="stylesheet" type="text/css" href="statics/bootstrap-3.3.7/css/bootstrap.css"> -->
+    <!-- <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=KZR4R8QTAAAxu67tBy18g3G9hRRx2Ras"></script> -->
+    <!-- <script type="text/javascript" src="statics/RichMarker_min.js"></script> -->
+    <script type="text/javascript" src="statics/station_name.js"></script>
+    <script type="text/javascript" src="statics/echarts.js"></script>
+    <script type="text/javascript" src="statics/world.json"></script>
+    <script type="text/javascript" src="statics/world.js"></script>
+    <!-- <script type="text/javascript" src="statics/bmap.min.js"></script> -->
+</head>
+
+<body>
+    <div id="header" style="display: none;"></div>
+    <div id="title-div" style="margin-bottom: 30px;">
+        <div class="layui-container" style="width: 1000px;">
+            <div class="layui-row">
+                <div class=" ml">
+                    <div class="layui-col-md7 md" style="width: 100%;overflow:hidden;margin-right: 10px;">
+                        <!-- <div id="allmap" style="width: 100%;height:600px;">The data is loading. Do not refresh the page...</div> -->
+                        <div id="map" style="height:600px;"></div>
+                    </div>
+                    <div class="layui-col-md5 ms" style="display: none;">
+                        <div class="layui-row">
+                            <div class="layui-col-md12">
+                                <button class="layui-btn layui-btn-primary layui-btn-sm" style="background-image: url(./images/home/u5.jpg);display: none;margin-bottom: 1px;color: white;" id="return-button">&gt;&gt;&gt;&gt;</button>
+                                <h4 style="font-family: krungthep;font-size: 15px;line-height: 25px;margin-top: 20px;margin-bottom: 18px;">location---<span id="map_size"></span><br /></h4>
+                                <div class="panel panel-default" style="display: none;margin-top: 1px;width:100%;word-wrap:break-word;word-break:break-all;">
+                                    <div class="layui-tab">
+                                        <ul class="layui-tab-title">
+                                            <li class="layui-this">ABCDEF</li>
+                                            <li>GHIJKL</li>
+                                            <li>MNOPQR</li>
+                                            <li>STUVWXYZ</li>
+                                            <li>Unfound</li>
+                                        </ul>
+                                        <div class="layui-tab-content">
+                                            <div class="layui-tab-item layui-show AF">
+                                            </div>
+                                            <div class="layui-tab-item GL"></div>
+                                            <div class="layui-tab-item MR"></div>
+                                            <div class="layui-tab-item SZ"></div>
+                                            <div class="layui-tab-item UF"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="main" style="width:70%;height:200px; margin-top:20px; margin-right:20px;display: none;"></div>
+                            </div>
+                            <div class="layui-col-md12 layui-hide" id="sample-detail-div">
+                                <div class="layui-row">
+                                    <div class="layui-col-md12">
+                                        <b>
+                                            <p style="font-size: 1.5em">Sample pollution rate in <span id="curcity"></span></p>
+                                        </b>
+                                    </div>
+                                    <div class="layui-col-md12">
+                                        <div class="layui-row layui-col-space5" id="contamination-content">
+                                        </div>
+                                    </div>
+                                    <div class="layui-col-md12" id="samplebar-div">
+                                    </div>
+                                    <div class="layui-col-md12" id="strain-div">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="mapEcharts" style="width: 400px;height:300px;display: none;" onmousedown="mousedown()"></div>
+    </div>
+    <div class="clear" style="clear: both;"></div>
+    <div id="footer" style="display: none;"></div>
+</body>
+<script src="statics/jquery-1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="statics/layui-v2.4.5/layui/layui.js"></script>
+<script>
+layui.use('element', function() {
+    var element = layui.element;
+});
+</script>
+<script type="text/javascript" src="statics/bootstrap-3.3.7/js/bootstrap.js"></script>
+<script type="text/javascript" src="statics/js/util/commonUtil.js"></script>
+<script src="files/common/librarycommon.js"></script>
+<script type="text/javascript" src="statics/echarts-4.5.0/echarts.min.js"></script>
+<script type="text/javascript" src="statics/js/util/GeoMap.js"></script>
+<script src="files/map/map_new2.js"></script>
+<!-- <script src="files/map/map.js"></script> -->
+<link href="files/map/map.css" type="text/css" rel="stylesheet" />
+
+</html>

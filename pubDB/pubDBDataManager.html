@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>后台管理模板</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../static/bootstrap-dropdown/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../plugins/layui-v2.4.5/layui/css/layui.css" media="all" />
+    <link rel="stylesheet" href="../css/global.css" media="all" />
+    <link rel="stylesheet" href="../css/font-awesome.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="files/pubDBDataManager/pubDBDataManager.css" />
+</head>
+
+<body>
+    <div id="content" style="padding: 14px 10px;">
+        <div id="sample-search-bar" class="layui-form" style="display: none;">
+            <blockquote class="layui-elem-quote layui-quote-nm" style="padding-left: 0px; margin: 10px 0 30px 0;">
+                <div class="layui-inline" id="sample-gene-database-search-bar" style="padding: 10px 0;">
+                    <label class="layui-form-label sample-gene-database-search-label">基因库</label>
+                    <div class="layui-inline">
+                        <select lay-filter="sample-gene-database" id="sample-gene-database-select">
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline" id="sample-owner-search-bar" style="padding: 10px 0;">
+                    <label class="layui-form-label sample-owner-search-label">用户名</label>
+                    <div class="layui-inline">
+                        <select lay-filter="sample-owner" id="sample-owner-select">
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline" id="sample-time-search-bar" style="padding: 10px 0;">
+                    <label class="layui-form-label sample-search-label">时间</label>
+                    <div class="layui-input-inline" style="width: 300px;">
+                        <input id="time-search-input" type="text" readonly="" placeholder="yyyy-MM-dd" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-inline" id="sample-type-search-bar" style="padding: 10px 0;">
+                    <label class="layui-form-label sample-type-search-label">类型</label>
+                    <div class="layui-inline">
+                        <select lay-filter="sample-type" id="sample-type-select">
+                            <option value="" selected=""></option>
+                            <option value="PMY">PMY</option>
+                            <option value="Tumor">Tumor</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline" id="sample-name-search-bar" style="padding: 10px 0;">
+                    <label class="layui-form-label sample-search-label">样本名</label>
+                    <div class="layui-inline">
+                        <input id="sample-name-search-input" type="text" placeholder="请输入样品名" class="layui-input">
+                    </div>
+                </div>
+                <div id="sample-search-operation-bar" class="layui-inline" style="padding: 10px 0; margin-left: 10px;">
+                    <div class="layui-btn-group">
+                        <button id="sample-search-btn" class="layui-btn" style="background-color: #5FB878;">搜索</button>
+                    </div>
+                </div>
+            </blockquote>
+        </div>
+        <div class="layui-inline" id="sample-lastest-search-bar" style="margin-bottom: -10px;">
+        </div>
+        <div class="layui-inline" id="sample-batch-operation-bar" style="margin-bottom: -10px; float: left;">
+            <div class="layui-btn-group">
+            <button class="layui-btn layui-btn-primary layui-btn-sm" id="btn_page_help">
+                <i class="layui-icon">&#xe60b;</i>帮助文档
+            </button>
+            <!-- <button class="layui-btn layui-btn-primary layui-btn-sm" id="btn_phe_manager">
+                <i class="layui-icon">&#xe60b;</i>表型管理
+            </button> -->
+            <button class="layui-btn layui-btn-primary layui-btn-sm" id="data_select_btn" style="display: none;">
+                <i class="layui-icon">&#xe615;</i>数据筛选
+            </button>
+            </div>     
+        </div>
+        <div class="layui-inline" id="sample-batch-operation-bar" style="margin-bottom: -10px; float: right;">
+            <div class="layui-btn-group">
+                <a href="../ref_download_file/xls_head/pubDBDataManager_head.xlsx" download="pubDBDataManager_head.xlsx">
+                     <button class="layui-btn layui-btn-primary layui-btn-sm" >
+                             <i class="layui-icon">&#xe62d;</i>导出模版
+                     </button>
+                </a>        
+                <button class="layui-btn layui-btn-primary layui-btn-sm" id="pubDBDataManager_upload">
+                    <i class="layui-icon">&#xe67c;</i>上传
+                </button>
+               
+                <input type="file" name="" id="id_upload_file_input" style="display: none">
+                <!-- <input type="file" name="" id="id_update_file_input" style="display: none"> -->
+            </div>
+        </div>
+        <!-- <div class="layui-inline log-flush-bar" style="margin-bottom: -10px; float: right; vertical-align:middle; padding:4px 10px 0 0; cursor: pointer;">
+            <span id="logFlush"><i class="layui-icon">&#x1002;</i></span>
+            <span id="btn_table_refresh">刷新</span>
+        </div> -->
+        <div id="sample-search-bar-test" class="layui-form" style="padding:3px 10px">
+        </div>
+        <table class="layui-hide" id="breeding_value_table" lay-filter="sample"></table>
+    </div>
+    <div id="analyzeResultTableDiv" style="display:none;">
+        <table id="analyzeResultTable" lay-filter="analyze-result-table"></table>
+    </div>
+    <div id="updata_table_div" style="display:none;">
+        <table id="updata_table" lay-filter="updata_table_filter"></table>
+    </div>
+    <div id="sampleDetail" style="display:none;">
+         <div id="" class="layui-collapse layui-form" style="margin: 15px 0 15px 0;">
+            <div class="layui-colla-item">
+                <!-- <h2 class="layui-colla-title">数据筛选</h2> -->
+                <div class="layui-colla-content layui-show layui-form">
+                    <div id="add-condition-item" class="layui-inline">
+                        <!-- <div id="sample-search-bar" class="layui-form"> -->
+                        <!-- <blockquote class="layui-elem-quote layui-quote-nm" style="padding-left: 0px; margin: 10px 0 30px 0;"> -->
+                        <div class="layui-inline" id="sample-gene-database-search-bar" style="padding: 10px 0;margin-left: 4%;">
+                            <label class="layui-form-label sample-gene-database-search-label">Security classification</label>
+                            <div class="layui-inline" id="layui-inline">
+                                <select lay-filter="option" id="security-database-select" >
+                                    <option class="security-option" value="1">1</option>
+                                    <option class="security-option" value="2">2</option>
+                                    <option class="security-option" value="3">3</option>
+                                    <option class="security-option" value="4">4</option>
+                                    <option class="security-option" value="5">5</option>
+                                    <option class="security-option" value="6">6</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline" style="padding: 10px; margin-left: 14.5%;" id="">
+                            <input id="" title="cds_from_genomic.fna.gz" type="checkbox" lay-filter="" name="gzLoads" lay-skin="primary">
+                            <input id="" title="feature_table.txt.gz" type="checkbox" lay-filter="" name="gzLoads" lay-skin="primary">
+                            <input id="" title="genomic.fna.gz"  type="checkbox" lay-filter="" name="gzLoads" lay-skin="primary">
+                            <input id="" title="genomic.gff.gz"  type="checkbox" lay-filter="" name="gzLoads" lay-skin="primary">
+                            <input id="" title="protein.faa.gz"  type="checkbox" lay-filter="" name="gzLoads" lay-skin="primary">
+                            <input id="" title="rna_from_genomic.fna.gz"  type="checkbox" lay-filter="" name="gzLoads" lay-skin="primary">
+                        </div>
+                        <!-- <div id="sample-search-operation-bar" class="layui-inline" style="padding: 10px 0; margin-left: 36%;">
+                            <div class="layui-btn-group">
+                                <button id="sample-search-btn" class="layui-btn" style="background-color: #5FB878;">confirm</button>
+                            </div>
+                            <div class="layui-btn-group">
+                                <button id="sample-search-btn" class="layui-btn" style="">confirm</button>
+                            </div>
+                        </div> -->
+                        <!-- </blockquote> -->
+                    </div>
+                </div>
+         
+        </div>
+    </div>
+    </div>
+    <div class="layui-box layui-form" id="analysis-configurator">
+        <div class="layui-inline analysis-configurator-params-main-panel">
+            <fieldset class="layui-elem-field layui-field-title">
+                <legend>分析过程 - 配置</legend>
+            </fieldset>
+            <div class="form-workflow-item">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">工作流</label>
+                    <div class="layui-inline">
+                        <select id="form-workflow-select" name="form-workflow-select" lay-verify="" lay-filter="workflow">
+                            <option value="">请选择一个工作流</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-local-output-dir-item">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">输出路径</label>
+                    <div class="layui-input-block">
+                        <input id="local-output-dir-input" name="title" lay-verify="required" autocomplete="off" placeholder="请输入输出路径" class="layui-input" type="text">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">批次号</label>
+                    <div class="layui-input-block">
+                        <input id="batch-number-input" name="title" lay-verify="required" autocomplete="off" placeholder="请输入批次号" class="layui-input" type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="form-sub-process-item">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">子过程</label>
+                    <div class="layui-inline">
+                        <select id="form-sub-process-select" name="form-sub-process-select" lay-verify="" lay-filter="sub-process">
+                            <option value="">请配置各个子过程参数</option>
+                        </select>
+                    </div>
+                    <div class="layui-inline" title="设置为开始结点">
+                        <button class="layui-btn layui-btn-sm layui-btn-primary layui-hide analysis-start-node-btn" id="set-start-node-btn">
+                            <i class="layui-icon">&#xe600;</i>
+                        </button>
+                    </div>
+                    <div class="layui-inline" title="设置为结束结点">
+                        <button class="layui-btn layui-btn-sm layui-btn-primary layui-hide analysis-end-node-btn" id="set-end-node-btn">
+                            <i class="layui-icon">&#xe617;</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="form-sub-process-item-list">
+                <div class="layui-form-item form-sub-process-item" id="task-name">
+                    <blockquote class="layui-elem-quote layui-quote-nm">
+                        <div class="form-input-params-title">
+                            <fieldset class="layui-elem-field layui-field-title" style="margin-top: 0px;">
+                                <legend>输入参数</legend>
+                            </fieldset>
+                        </div>
+                        <div class="form-input-params-list">
+                        </div>
+                        <div class="form-input-optional-params-title">
+                            <fieldset class="layui-elem-field layui-field-title" style="margin-top: 0px;">
+                                <legend>可选参数</legend>
+                            </fieldset>
+                        </div>
+                        <div class="form-input-optional-params-list">
+                        </div>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+        <div class="layui-inline analysis-configurator-input-files-panel">
+            <div class="analysis-input-files-group">
+                <div class="analysis-input-files-group-title-bar">
+                    <fieldset class="layui-elem-field layui-field-title">
+                        <legend>待分析样本</legend>
+                    </fieldset>
+                </div>
+                <div class="analysis-input-files-group-content" id="analysis-input-files-group-content">
+                    <ul class="tree-branch" id="analysis-group-tree"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sampleInLineTable-div" style="display: none;">
+        <table lay-filter="selectedSampleTable" id="selectedSampleTable">
+        </table>
+    </div>
+    <div id="phenotypeDataManageDiv"   style="display: none;">
+    	<form class="layui-form" style="margin:15px">
+    	<div class="layui-form-item">
+    		<label class="layui-form-label">表型选择</label>
+    		<div class="layui-input-inline">
+    			<select name="colName-select" lay-verify="">
+    			  <option value="">新建</option>
+    			</select>
+    		</div>
+    	</div>
+    	<div class="layui-form-item">
+    		<label class="layui-form-label">表型名</label>
+    		<div class="layui-input-inline">
+    		  <input id='colName' type="text" name="colName" placeholder="请输入表型名" class="layui-input">   
+    		</div>
+    	</div>
+    	<div class="layui-form-item">
+    		<label class="layui-form-label">类型</label>
+    		<div class="layui-input-inline">
+    			<select id='type-select' name="type-select" lay-verify="">
+    			  <option value="0">育种值</option>
+    			  <option value="1">数字</option>
+    			  <option value="2">日期</option>
+    			  <option value="3">字符串</option>
+    			</select>
+    		</div> 
+    	</div>
+    	<div class="layui-form-item">
+    	  <label class="layui-form-label">显示页面</label>
+    	  <div class="layui-input-block">
+    	    <input lay-skin="primary" lay-filter="permission-items" title="表型数据管理" type="checkbox">
+    	    <input lay-skin="primary" lay-filter="permission-items" title="育种值计算" type="checkbox">
+    	  </div>
+    	</div>
+    	<div class="layui-form-item">
+    	  <label class="layui-form-label">顺序</label>
+    	  <div class="layui-input-inline">
+    		  <input id="orderNum" type="text" name="orderNum" placeholder="请输入顺序" class="layui-input">   
+    		</div>
+    	</div>
+    </form>
+    </div>
+</body>
+<script type="text/javascript" src="../static/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../js/jszip.js"></script>
+<script type="text/javascript" src="../js/xlsx.js"></script>
+<script type="text/javascript" src="../static/bootstrap-dropdown/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../plugins/layui-v2.4.5/layui/layui.js"></script>
+<script type="text/javascript" src="../js/mydate.js"></script>
+<script type="text/javascript" src="../js/util/AdaptiveWindow.js"></script>
+<script type="text/javascript" src="files/pubDBDataManager/pubDBDataManager.js"></script>
+<script type="text/html" id="sample-type-div"></script>
+<script type="text/html" id="analyze-result-div">
+    <div class="layui-form">
+        <div class="layui-form-item">
+            <input type="radio" value="{{d.batchNum}}_{{d.workflowName}}" name="analyze-result-radio" data-batch-num="{{d.batchNum}}" data-workflow-name="{{d.workflowName}}" data-sample-names="{{d.sampleName}}" data-sample-ids="{{d.sampleId}}" class="analyze-result-radio" title=" ">
+        </div>
+    </div>
+</script>
+<script type="text/html" id="sample-type-div">
+    <div class="layui-form">
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="padding-left:0px;padding-right:0px;">设置类型:</label>
+            <div class="layui-input-block">
+                <select id="sampleChangeType">
+                    <option value="PMY" selected="selected">PMY</option>
+                    <option value="Tumor">Tumor</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/html" id="sample-replication-div">
+    <div class="layui-form">
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="padding-left:0px;padding-right:0px;">设置副本数:</label>
+            <div class="layui-input-block">
+                <select id="sampleChangeReplication">
+                    <!-- <option value="1">1 (临时文件)</option> -->
+                    <option value="2">2 (普通文件)</option>
+                    <option value="3" selected="selected">3 (重要文件)</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/html" id="sample-gene-database-div">
+    <div class="layui-form" style="padding:10px;">
+        <div class="layui-form-item" style="position:relative;">
+            <label class="layui-form-label" style="width: 120px; text-align: center;">当前基因库:</label>
+            <div id="current-gene-database" class="layui-inline" style="position: absolute; top: 50%; transform: translateY(-50%);">
+            </div>
+        </div>
+        <div class="layui-form-item" style="position:relative;">
+            <label class="layui-form-label" style="width: 120px; text-align: center;">设置基因库:</label>
+            <div class="layui-input-block" style="position: absolute; top: 50%; transform: translateY(-50%);">
+                <select id="sampleChangeGeneDatabase">
+                    <option value="" selected></option>
+                </select>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/html" id="operationBar">
+    <button class="layui-btn layui-btn-danger layui-btn-xs" lay-event="delete">删除</button>
+</script>
+<script type="text/html" id="uplaodStateTpl">
+    {{# if(d.upload_state.startWith('Succeeded')){ }}
+    <span style="color: #009688;">{{ "正常" }}</span> {{# } else if(d.upload_state.startWith('Uploading')){ }}
+    <span style="color: #1E9FFF;">{{ "上传中" }}</span> {{# } else if(d.upload_state.startWith('Error')){ }}
+    <span style="color: #FF5722;">{{ d.upload_state.substring('Error:'.length, d.upload_state.length) }}</span> {{# } else { }} {{ d.upload_state }} } {{# } }}
+</script>
+<script type="text/html" id="geneDatabaseTpl">
+    {{# if(d['gene_database_name'] == null) { }} {{ "未入库" }} {{# } else { }} {{ d['gene_database_name'] }} {{# } }}
+</script>
+<script type="text/html" id="sizeTpl">
+    {{ bytesToSize(d.size) }}
+</script>
+<script type="text/html" id="compressedSizeTpl">
+    {{ bytesToSize(d.compressed_size) }}
+</script>
+<script type="text/html" id="stateTpl">
+    {{# if(d.state.startWith('NORMAL') || d.state.startWith('UNCOMPRESS')){ }} {{ "未压缩" }} {{# } else if(d.state.startWith('Compressing')){ }}
+    <span style="color: #1E9FFF;">{{ d.state.substring('Compressing:'.length, d.state.length) }}</span> {{# } else if(d.state.startWith('Decompressing')){ }}
+    <span style="color: #1E9FFF;">{{ d.state.substring('Decompressing:'.length, d.state.length) }}</span> {{# } else if(d.state.startWith('Error')){ }}
+    <span style="color: #FF5722;">{{ d.state.substring('Error:'.length, d.state.length) }}
+    {{# } else { }} {{ d.state }} {{# } }}
+</script>
+</script>
+<script type="text/html" id="lineTypeTpl">
+    {{getLineName(d,"存在")}}
+</script>
+
+
+    <script type="text/html" id="barDemo">
+      <!-- <a class="layui-btn layui-btn-xs" lay-event="detail">查看</a>
+      <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a> -->
+      <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="delete">删除</a>
+      
+      <!-- 这里同样支持 laytpl 语法，如： -->
+     <!--  {{#  if(d.auth > 2){ }}
+        <a class="layui-btn layui-btn-xs" lay-event="check">审核</a>
+      {{#  } }} -->
+    </script>
+    <script type="text/html" id="Security">
+      <a class="layui-btn layui-btn-xs" lay-event="detail">查看</a>
+      <!-- <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a> 
+      <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="delete">delete</a>
+       -->
+      <!-- 这里同样支持 laytpl 语法，如： -->
+     <!--  {{#  if(d.auth > 2){ }}
+        <a class="layui-btn layui-btn-xs" lay-event="check">审核</a>
+      {{#  } }} -->
+    </script>
+</html>
+<!-- fa-eyedropper fa-flask fa-database-->

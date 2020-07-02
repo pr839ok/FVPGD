@@ -1,0 +1,26 @@
+h1 {
+    font: 25px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 0px 0px 10px 40px;
+    display: block;
+    border-bottom: 1px solid #DADADA;
+    margin: -10px -30px 30px -15px;
+    color: #888;
+    font-weight: bold;
+}
+#link-header {
+    background-color: #f2f2f2;
+    border: 1px solid #D2D2D2;
+}
+
+#title-div {
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 50px;
+    /*border: 1px solid #D2D2D2;*/
+    min-height: 280px;
+}
+.form{
+	background-color: #f2f2f2;
+	border:1px solid #f2f2f2;
+	padding: 20px 10px;
+}

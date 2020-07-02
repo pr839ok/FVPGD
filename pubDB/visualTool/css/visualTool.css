@@ -1,0 +1,53 @@
+.tick line, .tick text{
+    stroke: rgba(0,0,0,.3);
+    fill: none;
+}
+.tooltip {
+    position: absolute;
+    text-align: left;
+    background: #333;
+    color: #ddd;
+    padding: 2px;
+    border: 0px;
+    border-radius: 8px;
+    opacity: 0;
+    z-index: -1;
+    padding: 5px;
+}
+.tooltip :hover {
+    opacity: .9;
+    z-index: 99999;
+}
+.venntooltip > div{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.card-title {
+    margin: 0;
+    border-left: solid 3px #009688;
+    padding: 0 10px;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 30px;
+}
+#chart-coler-list .input-group-append{
+    padding: 8px 15px;
+    display: block;
+}
+.symbol-form{
+    background-color: #fff;
+    position: absolute;
+    text-align: left;
+    padding: 2px;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    /*opacity: 0;*/
+    display: none;
+
+}
+#svg-box{
+    position: relative;
+}

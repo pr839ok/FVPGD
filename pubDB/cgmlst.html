@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>cgmlst</title>
+    <link rel="icon" href="images/home/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="statics/layui-v2.4.5/layui/css/layui.css" media="all" />
+    <script type="text/javascript" src="statics/layui-v2.4.5/layui/layui.js"></script>
+    <link rel="stylesheet" type="text/css" href="statics/webupload/webuploader.css" />
+</head>
+
+<body>
+    <div id="header" style="display: none;"></div>
+    <div id="title-div">
+        <h1 class="s-query">Core genome multilocus sequence typing </h1>
+        <div class="line-div" style=""></div>
+        <div class="layui-row">
+            <form class="layui-form" action="">
+                <div class="layui-col-md12">
+                    <fieldset class="layui-elem-field">
+                        <legend>Query sequence</legend>
+                        <div class="layui-field-box">
+                            <div id="">
+                                <div id="" class="text ">
+                                    <div id="radioFasta_a">
+                                        <div class="layui-form-item" style="margin-bottom: 0px;">
+                                            <div class="layui-input-block" style="margin-left:0px;">
+                                                <input type="radio" name="selectRadio" value="0" title="Fasta" style="font-weight: 600;">
+                                                <div style="position: relative;top: 6px;font-size: 12px;display: inline;">Enter query sequence (single or multiple contigs up to whole genome in size)</div>
+                                                <p style="display: inline;" id="pFasta_a">
+                                                    <!-- <span id="fasta_span">Fasta</span> -->
+                                                </p>
+                                            </div>
+                                            <div id="job-textarea" class="">
+                                                <textarea id="" class="query_input_div"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="layui-col-md12">
+                    <fieldset class="layui-elem-field">
+                        <legend></legend>
+                        <div class="layui-field-box">
+                            <div class="layui-form-item" id="">
+                                <div id="radio-sec">
+                                    <div class="layui-col-md12">
+                                        <div id="radio-b" class="">
+                                            <div id="" class="text ">
+                                                <div id="radioFasta_b">
+                                                    <div class="layui-form-item" style="margin-bottom: 0px;">
+                                                        <div class="layui-input-block" style="margin-left:0px;">
+                                                            <input type="radio" name="selectRadio" value="1" title="Alternatively upload FASTA file" style="font-weight: 600;" checked>
+                                                            <p style="display: inline;" id="pFasta_b">
+                                                                <!-- <span id="input_span">File input</span> -->
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="layui-col-md1" style="margin-left: 28px;">
+                                        <div id="filePicker">Select files</div>
+                                    </div>
+                                </div>
+                                <div id="selectFile" style="display: inline;position: relative;top: 15px;margin-left: 5px;">
+                                    <div id="selectFileDiv" style="display: inline;">
+                                        <span id="infoNFS">No files selected</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </form>
+            <div class="layui-col-md12" style="margin-top: 25px;">
+                <fieldset class="layui-elem-field">
+                    <legend>Action</legend>
+                    <div class="layui-field-box" style="margin-left: 28px;">
+                        <div id="blast-button" class="text ">
+                            <button id="cgmlst" class="layui-btn">cgMLST</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <div id="filelist_table" style="display: none;">
+            <h1>The result of CGMLST -<span class="par"></span>:</h1>
+        </div>
+        <div id="loadingnew" style="display: none;margin:0 auto;">
+            <div class="layui-col-xs12 layui-col-sm6 layui-col-md4 layui-col-md-offset2" style="display: none;width: 470px;">
+                <div class="layui-form-item" style="">
+                    <label class="layui-form-label" id="label-s">Extraction code</label>
+                    <div class="layui-input-block" id="block-s">
+                        <input type="text" name="title" id="par" required lay-verify="required" placeholder="Please enter the extraction code" autocomplete="off" class="layui-input par" style="width: 290px;">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form">
+                <div class="layui-form-item" style="margin-top: 20px;margin-bottom: 5px;">
+                    <label>After the result comes out, we will send it to your email:</label>
+                </div>
+                <div class="layui-form-item" style="">
+                    <label class="layui-form-label" style="font-weight: bold;">Email:</label>
+                    <div class="layui-input-block" style="width: 289px;margin-left: 168px;">
+                        <input type="text" class="layui-input" name="email" id="email_input" lay-verify="email">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block" style="text-align: left;">
+                        <button class="layui-btn" lay-submit lay-filter="submitForm" id="submit_btn">submit</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+        <div id="anim" style="display: none;"><i class="layui-icon layui-anim layui-anim-rotate layui-anim-loop" style="margin-top: 8px;">&#xe63d;</i>&nbsp;The analysis is running. </div>
+        <p id="clickp" style="display: none;">The analysis has been completed.<a href="javascript:js_method();">Click here to show.</a> </p>
+        <div id="table" class="layui-form" style="display: none;">
+            <div class="layui-form-item layui-form-text" id="export_table_div" style="margin-bottom: 0px;">
+                <div class="layui-inline" style="margin-top: 20px;">
+                    <a id="export_table" href="javascript:void(0);">Download</a>
+                </div>
+                <div class="layui-inline" style="float: right;">
+                    <a id="evtree-download" href="javascript:void(0);" class="layui-hide" title="Download" style="cursor: pointer;"><i class="layui-icon" style="font-size: 30px;">&#xe601;</i></a>
+                </div>
+                <div class="layui-inline" style="float: right;">
+                    <a id="evtree-view" href="javascript:void(0);" class="layui-hide" title="View" style="cursor: pointer;"><i class="layui-icon" style="font-size: 30px;">&#xe615;</i></a>
+                </div>
+                <div class="layui-inline" style="float: right;">
+                    <div id="evtree-loop" class="layui-hide"><i class="layui-icon layui-anim layui-anim-rotate layui-anim-loop" style="margin-top: 8px;">&#xe63d;</i></div>
+                </div>
+                <div class="layui-inline" style="float: right;margin-top: 12px;">
+                    <p id="pic-name" class="layui-hide"></p>
+                </div>
+                <div class="layui-inline" style="float: right;">
+                    <input type="text" class="layui-input" placeholder="Enter your strain name" id="strain_input">
+                </div>
+                <div class="layui-inline" style="float: right;">
+                    <button class="layui-btn" id="create-tree" style="height: 38px;">Create Phylogenetic Tree</button>
+                </div>
+            </div>
+            <table class="layui-hide" id="filelist" lay-filter="filelist"></table>
+        </div>
+    </div>
+    <div class="clear" style="clear: both;"></div>
+    <div id="footer" style="display: none;"></div>
+</body>
+<script src="statics/jquery-1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="statics/bootstrap-3.3.7/js/bootstrap.js"></script>
+<script type="text/javascript" src="statics/webupload/webuploader.js"></script>
+<script type="text/javascript" src="statics/js/util/commonUtil.js"></script>
+<script type="text/javascript" src="statics/js/util/FileUtil.js"></script>
+<script src="files/common/librarycommon.js"></script>
+<script src="files/cgmlst/cgmlst.js"></script>
+<script type="text/html" id="titleTpl">
+    <a href='locus.html?&library={{getUrlParam("library")}}&locus={{d.geneName}}&Allele={{d.state}}&file={{d.fileName}}' class="layui-table-link" target="_blank">{{d.state}}</a>
+</script>
+<link href="files/cgmlst/cgmlst.css" type="text/css" rel="stylesheet" />
+
+</html>

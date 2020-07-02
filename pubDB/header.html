@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link rel="icon" href="images/home/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="statics/bootstrap-3.3.7/css/bootstrap.css">
+    <link href="files/common/header.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body id="box">
+    <div id="nss" style="display: none;">
+        <ul class="layui-nav">
+            <li class="layui-nav-item">
+                <a href="home.html" ><img src="images/home/GDIM.png" class="layui-nav-img" ></a>
+              <!--  <a href="home.html" style="display: inline;padding: 0px;"><img src="images/home/GDAC.png" class="layui-nav-img" ></a> -->
+            </li>
+            <li class="layui-nav-item layui-this" style=""><a href="index.html" target="" class="rr">Home</a></li>
+            <!-- <li class="dropdown layui-nav-item">
+                <a href="#" class="dropdown-toggle rr"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">library <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="classification.html" id="" class="">Escherichia</a></li>
+                </ul>
+            </li> -->
+            <li class="layui-nav-item">
+                <a href="javascript:;">Library</a>
+                <dl class="layui-nav-child">
+                    <!-- 二级菜单 -->
+                    <dd><a href="escherichia.html?library=Escherichia">Escherichia</a></dd>
+                    <dd><a href="Campylobacter.html?library=Campylobacter">Campylobacter</a></dd>
+                    <dd><a href="VP.html?library=Vpfasta">Vibrio Parahemolyticus</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item" style=""><a href="search.html" class="rr">Search</a></li>
+            <li class="layui-nav-item" style=""><a href="submit.html" class="rr">Submit</a></li>
+            <!-- <li class="layui-nav-item " style=""><a href="links.html" target="iframe">Links</a></li> -->
+            <li class="layui-nav-item " style="" id=""><a href="tools_l.html" class="rr">Tools</a></li>
+            <li class="layui-nav-item" style=""><a href="about.html" class="rr">About</a></li>
+        </ul>
+    </div>
+    <!-- <nav class=" navbar-default navbar-fixed-top sf" id="sf" style="display: none;" >
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="layui-nav-item layui-this" style=""><a href="home.html" target="iframe" class="sr srd">Home</a></li>
+                    <li class="dropdown layui-nav-item">
+                        <a href="#" class="dropdown-toggle sr srd"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">library <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="classification.html" id="sr" class="sr srd">Escherichia</a></li>
+                        </ul>
+                    </li>
+                    <li class="layui-nav-item" style=""><a href="search.html" target="iframe" class="sr srd">Search</a></li>
+                    <li class="layui-nav-item" style=""><a href="submit.html" target="iframe" class="sr srd">Submit</a></li>
+                    <li class="layui-nav-item " style="" id="queryT"><a href="analyseResult.html" target="iframe" class="sr srd">Task query</a></li>
+                    <li class="layui-nav-item" style=""><a href="about.html" target="iframe" class="sr srd" >About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav> -->
+    <div style="width: 1353px;margin: 0 auto;">
+        <a class="navbar-brand" href="index.html" style="margin-left: 8%;"><img src="images/home/GDIM.png" id="img_logo" style="   
+           max-width:70%; width: 142px;margin-bottom: 0;"></a>
+        <a class="navbar-brand" href="index.html" style="margin-left: -3%;"><img src="images/home/GDAC.png" id="img_logo" style="   
+           max-width:70%; width: 142px;margin-bottom: 0;"></a>
+        <div class="container" id="h2_1" style="width: 1080px;">
+            <h2 class="tab-h2">Foodborne Pathogenic Bacteria Genome Database</h2>
+            <p class="tab-p">by Guangdong Institute of Microbiology</p>
+        </div>
+    </div>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="layui-nav-item layui-this" style=""><a href="index.html" class="sr">Home</a></li>
+                    <li class="dropdown layui-nav-item" id="nav-li">
+                        <a href="" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Library <span class="caret"></span></a>
+                        <ul class="dropdown-menu" style="text-align: center;">
+                            <li><a href="escherichia.html?library=Escherichia" id="" class="" style="line-height: 28px;font-size: 16px">Escherichia</a></li>
+                            <li><a href="Campylobacter.html?library=Campylobacter" id="" class="" style="line-height: 28px;font-size: 16px">Campylobacter</a></li>
+                            <li><a href="VP.html?library=Vpfasta" id="" class="" style="line-height: 28px;font-size: 16px">VP</a></li>
+                        </ul>
+                    </li>
+                    <li class="layui-nav-item" style=""><a href="search.html"  class="sr">Search</a></li>
+                    <li class="layui-nav-item" style=""><a href="submit.html" class="sr">Submit</a></li>
+                    <!-- <li class="layui-nav-item " style=""><a href="links.html" target="iframe">Links</a></li> -->
+                    <li class="layui-nav-item " style="" id="queryT"><a href="tools_l.html" class="sr">Tools</a></li>
+                    <li class="layui-nav-item" style=""><a href="about.html"  class="sr" >About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header>
+    </header>
+</body>
+<!-- <script src="statics/jquery-1.9.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="statics/bootstrap-3.3.7/js/bootstrap.js"></script>
+<script type="text/javascript" src="../plugins/layui-v2.4.5/layui/layui.js"></script> -->
+<script src="files/common/header.js"></script>
+
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>analyseResult</title>
+    <link rel="stylesheet" type="text/css" href="statics/bootstrap-3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="statics/bootstrap-table-master/src/bootstrap-table.css">
+    <link rel="stylesheet" href="statics/layui-v2.4.5/layui/css/layui.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="statics/webupload/webuploader.css" />
+    <link rel="icon" href="images/home/favicon.ico" type="image/x-icon"/>
+    <link href="files/analyseResult/analyseResult.css" type="text/css" rel="stylesheet" />
+    <script src="statics/jquery-1.9.1/jquery.min.js"></script>
+    <!-- <script src="files/common/common.js"></script> -->
+    <script src="files/common/librarycommon.js"></script>
+    <script type="text/javascript" src="statics/layui-v2.4.5/layui/layui.js"></script>
+    <script type="text/javascript" src="statics/webupload/webuploader.js"></script>
+    <script type="text/javascript" src="statics/bootstrap-3.3.7/js/bootstrap.js"></script>
+    <script type="text/javascript" src="statics/bootstrap-table-master/src/bootstrap-table.js"></script>
+    <script type="text/javascript" src="statics/bootstrap-table-master/src/bootstrap-table-zh-CN.js"></script>
+    <script type="text/javascript" src="statics/js/util/commonUtil.js"></script>
+    <script type="text/javascript" src="statics/js/util/FileUtil.js"></script>
+    <script src="files/analyseResult/analyseResult.js"></script>
+</head>
+
+<body>
+    <div id="header"></div>
+    <div id="search_div">
+        <div class="layui-container">
+            <div class="layui-row">
+                <div class="layui-col-xs12 layui-col-sm6 layui-col-md4 layui-col-md-offset2">
+                    <div class="layui-form-item" style="">
+                        <label class="layui-form-label" id="label-s">Extraction code</label>
+                        <div class="layui-input-block" id="block-s">
+                            <input type="text" name="title" id="par" required lay-verify="required" placeholder="Please enter the extraction code" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-xs12 layui-col-sm6 layui-col-md4 ">
+                    <div class="layui-form-item" style="">
+                        <div class="layui-input-block" id="button-s">
+                            <button class="layui-btn" lay-submit lay-filter="formSearch" id="searchButton">query</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="filelist_table">
+            <div class="layui-form-item layui-form-text layui-hide" style="margin-bottom: 0px;" id="export_table_div">
+                <div class="layui-inline" style="margin-top: 20px;">
+                    <a id="export_table" href="javascript:void(0);">Download</a>
+                </div>
+                <div class="layui-inline" style="float: right; margin-bottom: 0px;">
+                    <a id="evtree-download" href="javascript:void(0);" class="layui-hide" title="Download" style="cursor: pointer;"><i class="layui-icon" style="font-size: 30px;">&#xe601;</i></a>
+                </div>
+                <div class="layui-inline" style="float: right; margin-bottom: 0px;">
+                    <a id="evtree-view" href="javascript:void(0);" class="layui-hide" title="View" style="cursor: pointer;"><i class="layui-icon" style="font-size: 30px;">&#xe615;</i></a>
+                </div>
+                <div class="layui-inline" style="float: right;margin-top: 12px;">
+                    <p id="pic-name" class="layui-hide"></p>
+                </div>
+            </div>
+            <table class="layui-hide" id="filelist" lay-filter="filelist"></table>
+        </div>
+    </div>
+    <div class="result-div" style="display: none;">
+        <fieldset id="jobTitle" class="layui-elem-field">
+            <legend>
+                <div id="blast-result">blastNResult</div>
+            </legend>
+            <div class="layui-field-box result-box" style="">
+                <div id="">
+                    <div class="layui-container">
+                        <div class="layui-row">
+                            <div class="layui-col-md5">
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label label-head">Date:</label>
+                                    <label class="layui-form-label label-mid" id="RID_label"></label>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label label-head">Query ID:</label>
+                                    <label class="layui-form-label label-mid" id="QueryID_label"></label>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label label-head">Molecule Type:</label>
+                                    <label class="layui-form-label label-mid" id="Molecule_label"></label>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label label-head" style="">Query Length:</label>
+                                    <label class="layui-form-label label-mid" id="QueryLength_label" style=""></label>
+                                </div>
+                            </div>
+                            <div class="layui-col-md5">
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label label-head">Database Name:</label>
+                                    <label class="layui-form-label label-mid" id="DB_name_label"></label>
+                                </div>
+                                <div class="layui-form-item layui-form-text">
+                                    <label class="layui-form-label label-head">Program:</label>
+                                    <label class="layui-form-label label-mid" id="Program_label"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-form-text" id="DownloadFile">
+                        <a id="tabular-download-tabular">DownloadTabularFile</a>
+                    </div>
+                    <table lay-filter="paired" id="paired">
+                    </table>
+                    <table id="table" class="table table-hover table-bordered"></table>
+                    <div id="Download">
+                        <div class="layui-form-item layui-form-text" id="DownloadFile">
+                            <a id="tabular-download-pair">DownloadAsnFile</a>
+                        </div>
+                        <div id="resultRequenceHead-div"></div>
+                        <div id="resultRequence-div"></div>
+                        <div id="resultRequence"></div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        
+    </div>
+    <form class="layui-form" action="" id="form" style="display:none;">
+            <div class="layui-form-item" pane="">
+                <div class="layui-input-block">
+                    <div class="layui-container" style="width:550px;">
+                        <div class="layui-row" style="margin-top: 15px;">
+                            <div class="layui-col-md3">
+                                <input name="like1[write]" lay-skin="primary" title="direct_repeat" id="direct_repeat" checked="" type="checkbox">
+                            </div>
+                            <div class="layui-col-md9">
+                                <input name="title" lay-verify="title" autocomplete="off" placeholder="" class="layui-input" type="text" id="direct">
+                            </div>
+                        </div>
+                        <div class="layui-row" style="margin-top: 15px;">
+                            <div class="layui-col-md3">
+                                <input name="like1[write]" lay-skin="primary" title="binding_site" id="binding_site" checked="" type="checkbox">
+                            </div>
+                            <div class="layui-col-md9">
+                                <input name="title" lay-verify="title" autocomplete="off" placeholder="" class="layui-input" type="text" id="binding">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    <div id="footer"></div>
+</body>
+<script type="text/html" id="titleTpl">
+    <a href='locus.html?locus={{d.geneName}}&Allele={{d.state}}&file={{d.fileName}}' class="layui-table-link" target="_black">{{d.state}}</a>
+</script>
+<script type="text/html" id="titleTpl">
+    <a href='locus.html?locus={{d.geneName}}&Allele={{d.state}}&file={{d.fileName}}' class="layui-table-link" target="_black">{{d.state}}</a>
+</script>
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-xs" lay-event="check">check</a>
+
+</script>
+
+</html>

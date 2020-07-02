@@ -1,0 +1,296 @@
+#title-div {
+    margin: 0 auto;
+    width: 1000px;
+
+    margin-top: 50px;
+}
+
+.layui-elem-field {
+    background-color: #f2f2f2;
+    width: 996px;
+    /*  padding-left: 30px;*/
+}
+
+#Query-title {
+    background-color: #d1cfcf;
+}
+
+#second_md {
+    line-height: 25px;
+    text-align: center;
+    padding-right: 15px;
+}
+
+#pFasta_a {
+    text-align: left;
+}
+
+#fasta_span {
+    margin-left: 5px;
+}
+
+#job-title {
+    margin-top: 10px;
+    margin-left: 21px;
+}
+
+.job_title_input {
+    margin-left: 25px;
+    width: 500px;
+}
+
+#job-textarea {
+    margin-left: 21px;
+    margin-top: 10px;
+}
+
+.query_input_div {
+    width: 586px;
+    min-height: 120px;
+}
+
+#input_span {
+    margin-left: 5px;
+}
+
+#radio-b {
+    margin-top: 20px;
+}
+
+.webuploader-pick {
+    padding: 4px 0;
+    margin-top: 15px;
+}
+
+#radio-sec {
+    clear: both;
+}
+
+#selectFile {
+    position: relative;
+    top: 21px;
+    left: -48px;
+}
+
+#blast-button {
+    position: relative;
+    top: 27px;
+    left: 70px;
+}
+
+#Database-select {
+    position: relative;
+    left: -17px;
+}
+
+.webuploader-container {
+    position: relative;
+    left: -17px;
+}
+
+#subrange-div {
+    margin-bottom: 20px;
+}
+
+#input-title-c {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#input-title {
+    width: 1000px;
+    margin: 0 auto;
+    /* padding: 10px 15px;*/
+    border-width: 1px;
+}
+
+#parameters-1 {
+    width: 300px;
+    height: 260px;
+}
+
+#max-target {
+    background-color: #d1cfcf;
+}
+
+.box-1 {
+    margin-left: 18px;
+    margin-top: 20px;
+}
+
+.box-2 {
+    margin-left: 28px;
+    margin-top: 40px;
+}
+
+.box-3 {
+    margin-top: 20px;
+}
+
+.layui-colla-content layui-show {}
+
+#jobTitle {
+    width: 1000px;
+    margin: 0 auto;
+    border: 1px solid #e6e6e6;
+    margin-top: 20px;
+    background-color: white;
+}
+
+.result-div {
+    margin-top: 20px;
+}
+
+#blast-result {
+    background-color: #d1cfcf;
+}
+
+.filters {
+    margin-left: 90px;
+}
+
+.result-box {
+    width: 1000px;
+}
+
+.label-mid {
+    text-align: left;
+    width: 220px;
+}
+
+.label-head {
+    width: 174px;
+}
+
+legend {
+    display: block;
+    width: auto;
+    padding: 0;
+    margin-bottom: 0px;
+    /*font-size: 21px;*/
+    line-height: inherit;
+    color: #333;
+    border: 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+#search_div {
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+pre {
+    display: block;
+    padding: 0px;
+    margin: 0 0 0px;
+    font-size: 13px;
+
+    color: none;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: white;
+    border: 0px solid #ccc;
+    border-radius: 0px;
+}
+#label-s{
+    width: 109px;
+    padding: 9px 0px;
+    font-weight: 600;
+}
+.layui-input-block {
+    margin-left: 138px;
+    min-height: 36px;
+}
+#button-s{
+    margin-left: 100px;
+}
+#par{
+    width: 116%;
+}
+/* 小屏幕（平板，大于等于768px） */
+
+@media (max-width: 768px) {
+
+    #search_div {
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+    #label-s {
+        width: 109px;
+    }
+    #block-s{
+        margin-left: 0px;
+    }
+    #par {
+        width: 80%;
+    }
+    #title-div {
+        width: 100%;
+    }
+    .query_input_div {
+        width: 270px;
+        min-height: 120px;
+    }
+    .job_title_input {
+        margin-left: 31px;
+        width: 179px;
+    }
+    #jobTitle {
+        width: 100%;
+    }
+    #input-title {
+        width: 100%;
+    }
+    #input-title-c {
+        width: 100%;
+    }
+    #job-textarea {
+        margin-left: 22px;
+        margin-top: 11px;
+    }
+
+    .webuploader-container {
+        left: 0px;
+    }
+    .layui-elem-field {
+        width: 100%
+    }
+    #blast-button,
+    #selectFile {
+        left: 0px;
+        text-align: center;
+        top: 0px;
+    }
+    #parameters-1 {
+        width: 283px;
+        height: 260px;
+        margin: 0 auto;
+    }
+    .filters {
+        margin-left: 0px;
+    }
+
+    .text2 {
+        margin-left: 19px;
+        margin-top: 10px;
+    }
+    .result-box {
+        width: 100%;
+    }
+    .label-mid {
+        text-align: left;
+        width: 117px
+    }
+    .label-head {
+        width: 122px;
+    }
+    .layui-form-label {
+        padding: 9px 3px;
+    }
+    h3 {
+        font-size: 16px;
+    }
+}

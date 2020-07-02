@@ -1,0 +1,158 @@
+.layui-colla-title {
+    background-color: white;
+    padding: 0px;
+}
+
+.layui-collapse {
+    border: 0px;
+}
+
+.layui-colla-content {
+    border: 0px;
+    padding: 10px 0px;
+}
+
+#Query-title {
+    background-color: white;
+}
+
+.layui-elem-field {
+    border: 0px;
+    background-color: white;
+}
+
+.layui-colla-icon {
+    display: none;
+}
+
+.layui-elem-field legend {
+    padding: 0px;
+    margin-left: 0px;
+}
+
+.layui-field-box {
+    padding: 0px;
+}
+
+.layui-form-radio {
+    margin: 0px;
+}
+
+.webuploader-pick {
+    background-color: #009688;
+    margin-top: 23px;
+}
+
+.job_title_input_jtb {
+    margin-left: 25px;
+    width: 909px;
+}
+#jbt{
+    font-weight: 600;
+}
+.query_input_div {
+    width: 971px;
+    min-height: 134px;
+    margin-left: 8px;
+}
+
+#Query-title {
+    background-color: white;
+}
+
+.layui-collapse .layui-colla-title span {
+    color: #5074b2;
+    font-weight: 600;
+}
+
+#Query-title p {
+    color: #5074b2;
+    font-style: italic;
+}
+
+#max-target span {
+    color: #5074b2;
+    font-style: italic;
+}
+
+#max-target {
+    background-color: white;
+}
+
+#show-content-1 fieldset legend {
+    margin-left: -6px;
+}
+
+#radio-sec .layui-col-md2 {
+    width: 11.667%;
+}
+
+#selectFile {
+    top: 28px;
+}
+
+.layui-colla-title {
+    height: 25px;
+    line-height: 27px;
+}
+
+.layui-colla-title span {
+    font-size: 18px;
+}
+
+.line-div {
+    background: linear-gradient(to right, #5074b2, #efefef);
+    height: 1.5px;
+}
+
+#job-title-jbt {
+    margin-top: 10px;
+    /*margin-left: 30px;*/
+}
+.from-to-div{
+    margin-top: 10px;
+    margin-left: 30px;
+}
+.layui-elem-field {
+    margin-bottom: 28px;
+}
+.box-1-1,.box-2{
+    padding-bottom: 20px;
+    margin-bottom: 24px;
+}
+#max-target span{
+    margin-left: 4px;
+    margin-bottom: 10px;
+}
+p{
+    margin: 0px;
+}
+#radioFasta_a .layui-input-block .layui-form-radio div, #radioFasta_b .layui-input-block .layui-form-radio div{
+    font-weight: 600;
+}
+#jobTitle{
+    margin-top: 0px;
+}
+#rs_l {
+width: 319px;
+padding: 9px 0px;
+line-height: 30px;
+}
+.layui-table, .layui-table-view{
+    margin-top: 20px 0 0 0;
+}
+.table {
+    margin-bottom:0px;
+}
+#DownloadFile{
+    margin-bottom: 8px;
+}
+.layui-form-item {
+margin-bottom: 5px;
+}
+#footer-div p{
+    margin: 0 0 10px;
+}
+#u433_input,#u435_input,#u441_input,#u441_1_input,#u442_input,#u442_1_input{
+    padding-left: 10px;
+}

@@ -1,0 +1,126 @@
+#title-div {
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+h4 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    font-weight: bold;
+}
+
+#img-div {
+    width: 900px;
+    margin: 0 auto;
+}
+
+#map-doc {
+    width: 43px;
+    height: 40px;
+    position: relative;
+    left: 637px;
+    top: -329px;
+    cursor: pointer;
+}
+
+.BMap_Marker div img {
+    width: 20px;
+}
+
+/*#return-button{
+    display: none;
+}*/
+
+#div-img {
+    float: right;
+    left: 23px;
+    top: -642px;
+    position: relative;
+    width: 291px;
+    height: 172px;
+}
+
+#div-img-2 {
+    width: 189px;
+    float: right;
+    left: -369px;
+    top: -200px;
+    position: relative;
+}
+
+#div-ul {
+    float: right;
+    left: 397px;
+    top: -634px;
+    position: relative;
+    width: 291px;
+    height: 172px;
+    line-height: 26px;
+}
+
+#result-div {
+    display: none;
+    /*float: right;
+    height: 0px;*/
+}
+/*.container {
+width: 970px;
+}*/
+
+.layui-tab-title li{
+    font-size: 12px;
+    padding: 0 14px;
+}
+/* 小屏幕（平板，大于等于768px） */
+@media (max-width: 768px) {
+    #title-div {
+        width: 100%;
+    }
+
+    #img-div {
+        width: 100%
+    }
+
+    #img {
+        width: 100%
+    }
+
+    #map-doc {
+        left: 204px;
+        top: -126px;
+    }
+
+    /*#div-img {
+        float: right;
+        left: -11px;
+        top: -242px;
+        position: relative;
+        width: 69px;
+        height: 47px;
+    }*/
+    #div-img-2 {
+        width: 189px;
+        float: none;
+        left: 0px;
+        top: -372px;
+        position: relative;
+    }
+
+    #return-button {
+        top: -335px;
+        position: relative;
+        left: 80px;
+    }
+
+    /*label{
+    max-width: 0p;
+}*/
+div {
+width: 600px;
+text-align: center;
+font-size: 4em;
+color: #333;
+} 

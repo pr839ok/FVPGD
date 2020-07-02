@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>classification_new</title>
+    <link rel="icon" href="images/home/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="statics/layui-v2.4.5/layui/css/layui.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="statics/bootstrap-3.3.7/css/bootstrap.css">
+    <link href="files/classification/classification.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body id="box">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="home.html" style="margin-left: 14%;"><img src="images/home/logo1.png" id="img_logo"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="layui-nav-item " style=""><a href="home.html" target="">Home</a></li>
+                    <li class="layui-nav-item layui-this" style=""><a href="SpeciesA.html" target="iframe">Escherichia</a></li>
+                    <li class="layui-nav-item" style=""><a href="map_c.html" target="iframe">Map</a></li>
+                    <li class="dropdown layui-nav-item">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Typing <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="cgmlst.html" target="iframe">cgMLST</a></li>
+                            <li><a href="crispr.html" target="iframe">CRISPR</a></li>
+                        </ul>
+                    </li>
+                    <!-- <li class="layui-nav-item layui-this" style=""><a href="classify_submit.html" target="iframe">submit</a></li> -->
+                    
+                   <!--  <li class="layui-nav-item " style="">
+                        <a href="javascript:;" style="">Typing</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="" target="">cgMLST</a></dd>
+                            <dd><a href="">CRISPR</a></dd>
+                        </dl>
+                    </li> -->
+                    <li class="layui-nav-item "  style=""><a href="tools.html" target="iframe">Tools</a></li>
+                    <!-- <li class="layui-nav-item" id="queryT" style=""><a href="analyseResult.html" target="iframe">Task query</a></li> -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container" id="h2_1">
+        <h2 class="tab-h2">Foodborne Pathogenic Bacteria Genome Database</h2>
+        <p class="tab-p">by Guangdong Institute of Microbiology</p>
+    </div>
+    <header>
+    </header>
+    <iframe id="iframe" name="iframe" src="SpeciesA.html" scrolling="no"></iframe>
+    <footer>
+        <div id="footer-div">
+            <h5>Copyright@Guangzhou MingLeadGene Technology Co.Ltd</h5>
+        </div>
+    </footer>
+</body>
+<!-- <body id="box">
+    <header>
+        <div id="header-div">
+            <div id="img-div">
+                <img src="images/home/u20.jpg">
+                <div id="h1-div">
+                    <h1>Foodborne pathogenic bacteria genome database</h1>
+                </div>
+            </div>
+        </div>
+        <div id="home-div">
+            <ul class="layui-nav" lay-filter="nav" style="">
+                <li class="layui-nav-item " style=""><a href="home.html" target="">Home</a></li>
+                <li class="layui-nav-item layui-this" style=""><a href="SpeciesA.html" target="iframe">Escherichia</a></li>
+                <li class="layui-nav-item" style=""><a href="map.html" target="iframe">Map</a></li>
+                <li class="layui-nav-item" style="">
+                    <a href="javascript:;" style="">Typing</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="" target="">cgMLST</a></dd>
+                        <dd><a href="">CRISPR</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item " style=""><a href="tools.html" target="iframe">Tools</a></li>
+            </ul>
+        </div>
+    </header>
+    <iframe id="iframe" name="iframe" src="SpeciesA.html" scrolling="no"></iframe>
+    <footer>
+        <div id="footer-div">
+            <h5>Copyright@Guangzhou MingLead Gene Technology Co.Ltd</h5>
+        </div>
+    </footer>
+</body> -->
+<script src="statics/jquery-1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="statics/layui-v2.4.5/layui/layui.js"></script>
+<script src="files/classification/classification.js"></script>
+<script type="text/javascript" src="statics/bootstrap-3.3.7/js/bootstrap.js"></script>
+
+</html>

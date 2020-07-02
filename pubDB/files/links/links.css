@@ -1,0 +1,45 @@
+#link-header {
+    background-color: #f2f2f2;
+    border: 1px solid #D2D2D2;
+    margin-bottom: 5px;
+}
+
+#title-div {
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 50px;
+    border: 1px solid #D2D2D2;
+}
+.ol-f{
+	margin:30px 30px;
+	cursor: pointer;
+	width: 954px;
+	border:1px solid transparent;
+}
+.ol-f:hover{
+	margin:30px 30px;
+	border:1px #ccc solid;
+}
+ol a{
+	margin-left: 40px;
+	color: #985735 !important;
+	font-size: 1.2307em;
+}
+p{
+	margin: 13px 56px;
+	color: #2f4a8b;
+}
+/* 小屏幕（平板，大于等于768px） */
+@media (max-width: 768px) {
+
+    p{
+	margin: 13px 0px;
+	color: #2f4a8b;
+}
+.ol-f {
+	width: 80%;}
+	#title-div {
+		width: 100%;
+	}
+    
+｝

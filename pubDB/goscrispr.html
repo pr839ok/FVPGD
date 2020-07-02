@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>crispr</title>
+    <link rel="icon" href="images/home/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="statics/layui-v2.4.5/layui/css/layui.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="statics/webupload/webuploader.css" />
+</head>
+
+<body>
+    <div id="title-div" style="width:90%">
+        <div class="">
+            <h1>Sequence query - Cronobacter locus/sequence definitions：</h1>
+            <div class="layui-row">
+                <div class="layui-col-md6">
+                    <fieldset class="layui-elem-field">
+                        <legend>Enter query sequence (single or multiple contigs up to whole genome in size)</legend>
+                        <div class="layui-field-box">
+                            <div id="">
+                                <div id="" class="text ">
+                                    <div id="radioFasta_a">
+                                        <input type="radio" name="selectRadio" value="0" title="Fasta">
+                                        <p style="display: inline;" id="pFasta_a"><span id="fasta_span">Fasta</span></p>
+                                    </div>
+                                    <div id="job-textarea" class="">
+                                        <textarea id="" class="query_input_div"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="layui-col-md4">
+                    <fieldset class="layui-elem-field">
+                        <legend>Alternatively upload FASTA file</legend>
+                        <div class="layui-field-box">
+                            <div class="layui-form-item" id="">
+                                <div id="radio-sec">
+                                    <div class="layui-col-md5">
+                                        <div id="radio-b" class="">
+                                            <div id="" class="text ">
+                                                <div id="radioFasta_b">
+                                                    <input type="radio" name="selectRadio" value="1" title="File input" checked>
+                                                    <p style="display: inline;" id="pFasta_b"><span id="input_span">File input</span></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="layui-col-md5">
+                                        <div id="filePicker">Select files</div>
+                                    </div>
+                                </div>
+                                <div id="selectFile" style="display: none;">Uploaded file:
+                                    <div id="selectFileDiv" style="display: none;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="layui-col-md2">
+                    <fieldset class="layui-elem-field">
+                        <legend>Action</legend>
+                        <select class="form-control" style="width:80%;margin:0 auto " id="rtl">
+                            <option>sakazakii_1_order.fas</option>
+                            <option>sakazakii_2_order.fas</option>
+                            <option>sakazakii_3_order.fas</option>
+                            <option>sakazakii_6_order.fas</option>
+                        </select>
+                        <div class="layui-field-box">
+                            <div id="blast-button" class="text ">
+                                <button id="cgmlst" class="layui-btn">CRISPR</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <!-- <div id="radio-sec">
+        <div class="layui-col-md2">
+            <div id="filePicker">Select files</div>
+        </div>
+    </div>
+    <div id="selectFile" style="display: none;">Uploaded file:
+        <div id="selectFileDiv" style="display: none;"></div>
+    </div> -->
+            <!-- <div id="loadingnew" style="display: none;">
+        <div style="float: left;"><div class="loadEffect">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div></div><h3 style="float: left;margin-top: 47px;">loading.......</h3>
+        </div> -->
+            <div id="filelist_table" style="display: none;">
+                <h1>The result of CRISPR -<span class="par"></span> ：</h1>
+            </div>
+            <div id="loadingnew" style="display: none;margin:0 auto;">
+                <div class="layui-col-xs12 layui-col-sm6 layui-col-md4 layui-col-md-offset2" style="display: none;width: 470px;">
+                    <div class="layui-form-item" style="">
+                        <label class="layui-form-label" id="label-s">Extraction code</label>
+                        <div class="layui-input-block" id="block-s">
+                            <input type="text" name="title" id="par" required lay-verify="required" placeholder="Please enter the extraction code" autocomplete="off" class="layui-input par" style="width: 290px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="clear: both;"></div>
+            <div id="anim" style="display: none;"><i class="layui-icon layui-anim layui-anim-rotate layui-anim-loop" style="margin-top: 8px;margin-left: 16.6%">ဂ</i>&nbsp;The analysis is running. </div>
+            <p id="clickp" style="display: none;margin-left: 16.6%">The analysis has been completed.<a href="javascript:js_method();">Click here to show.</a> </p>
+            <div id="table">
+                <table class="layui-hide" id="filelist" lay-filter="filelist"></table>
+            </div>
+            <div style="clear: both;"></div>
+            <!-- <div id="filelist_table">
+                <table class="layui-hide" id="filelist1" lay-filter="filelist1"></table>
+                <table class="layui-hide" id="filelist2" lay-filter="filelist2"></table>
+                <table class="layui-hide" id="filelist3" lay-filter="filelist3"></table>
+                <table class="layui-hide" id="filelist6" lay-filter="filelist6"></table>
+            </div> -->
+        </div>
+    </div>
+    <form class="layui-form" action="" id="form" style="display:none;">
+        <div class="layui-form-item" pane="">
+            <div class="layui-input-block">
+                <div class="layui-container" style="width:550px;">
+                    <div class="layui-row" style="margin-top: 15px;">
+                        <div class="layui-col-md3">
+                            <input name="like1[write]" lay-skin="primary" title="direct_repeat" id="direct_repeat" type="checkbox">
+                        </div>
+                        <div class="layui-col-md9">
+                            <input name="title" lay-verify="title" autocomplete="off" placeholder="" class="layui-input" type="text" id="direct">
+                        </div>
+                    </div>
+                    <div class="layui-row" style="margin-top: 15px;">
+                        <div class="layui-col-md3">
+                            <input name="like1[write]" lay-skin="primary" title="binding_site" id="binding_site" checked="" type="checkbox">
+                        </div>
+                        <div class="layui-col-md9">
+                            <input name="title" lay-verify="title" autocomplete="off" placeholder="" class="layui-input" type="text" id="binding">
+                        </div>
+                    </div>
+                    <div class="layui-row" style="margin-top: 15px;">
+                        <div class="layui-col-md3">
+                            <input name="like1[write]" lay-skin="primary" title="ID" checked="" id="ID_check" type="checkbox">
+                        </div>
+                        <div class="layui-col-md9">
+                            <input name="title" lay-verify="title" autocomplete="off" placeholder="" class="layui-input" type="text" id="ID">
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </form>
+</body>
+<script src="statics/jquery-1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="statics/bootstrap-3.3.7/js/bootstrap.js"></script>
+<script type="text/javascript" src="statics/webupload/webuploader.js"></script>
+<script type="text/javascript" src="statics/layui-v2.4.5/layui/layui.js"></script>
+<script src="files/common/librarycommon.js"></script>
+<script src="files/crispr/crispr.js"></script>
+<script type="text/html" id="titleTpl">
+    <a href='locus.html?locus={{d.geneName}}&Allele={{d.state}}&file={{d.fileName}}' class="layui-table-link" target="_black">{{d.state}}</a>
+</script>
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-xs" lay-event="edit">入库</a>
+
+</script>
+<link href="files/crispr/crispr.css" type="text/css" rel="stylesheet" />
+
+</html>

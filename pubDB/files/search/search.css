@@ -1,0 +1,254 @@
+#form-div {
+    width: 1024px;
+    /*height: 1500px;*/
+    margin: 0 auto;
+    margin-top: 50px;
+}
+body{font-family:SimSun}
+#home-div {
+    width: 850px;
+    margin: 0 auto;
+}
+h2{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+#img-div img {
+    width: 200px;
+    height: 200px;
+    display: inline;
+}
+
+#h1-div {
+    display: inline;
+    margin-left: 50px;
+}
+
+h1 {
+    display: inline;
+}
+
+#header-div {
+    width: 900px;
+    margin: 0 auto;
+}
+
+#table-div {
+    width: 1024px;
+    margin: 0 auto;
+}
+
+
+
+h5 {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.layui-form-item {
+    display: inline-table;
+    margin-left: 6%;
+}
+
+/*.layui-input-block {
+    width: 308px;
+}*/
+
+.gene-block {
+    width: 308px;
+}
+
+/*.layui-form-item .layui-input-inline {
+    width: 150px;
+}*/
+
+#from-button {
+    text-align: center;
+
+    width: 100%;
+    margin: 0 auto;
+    top: 7px;
+}
+#b-block{
+    margin: 0px;
+    width: 100%;
+}
+#searchresult {
+    width: 306px;
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+    left: 140px;
+    top: 71px;
+
+    border-top: none;
+
+    line-height: 1.3;
+    line-height: 38px\9;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #D2D2D2;
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+
+
+.line {
+
+
+    width: 306px;
+}
+
+.hover {
+    background: #e6e6e6;
+    width: 306px;
+}
+
+.std {
+    width: 306px;
+}
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+label{
+    margin-bottom: 0px;
+}
+.layui-input-block {
+    margin-left: 81px;
+    min-height: 36px;
+}
+.layui-anim-upbit{
+    width: 147px;
+}
+
+
+
+.layui-btn {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 12px;
+    background-color: #009688;
+    color: #fff;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 14px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.layui-form-label {
+    
+    text-align: left;
+}
+   .line-div {
+    background: linear-gradient(to right, #5074b2, #efefef);
+    height: 1.5px;
+}
+.layui-colla-title p{
+    color: #5074b2;
+    font-weight: 600;
+}
+.layui-colla-icon{
+    display:none;
+}
+.layui-colla-title{
+    padding: 0px;
+    margin-bottom: 0px;
+    background-color: white;
+}
+.ci{
+    width:308px !important;
+}
+.co{
+    width:149px !important;
+}
+/* 小屏幕（平板，大于等于768px） */
+
+@media (max-width: 768px) {
+    .layui-colla-content {
+        display: none;
+        padding: 10px 8px;
+        line-height: 22px;
+        color: #666;
+    }
+    .layui-form-label {
+        width: 58px;
+        padding: 9px 4px;
+    }
+    .layui-form-item .layui-input-inline {
+        width: 105%;
+    }
+
+
+    .layui-container {
+        padding: 0px;
+    }
+    .layui-input {
+       /* width: 98%;*/
+    }
+    .layui-form-select .layui-input {
+        padding-right: 16px;
+        cursor: pointer;
+    }
+    .layui-input-block {
+        margin-left: 34%;
+        min-height: 36px;
+    }
+    .layui-form-item .layui-input-inline {
+        display: block;
+        float: none;
+        
+       
+        margin: 0 0px 10px 34%;
+    }
+    .layui-form-select .layui-edge {
+        right: 15px;
+    }
+    .co .layui-form-select .layui-edge {
+        right: 15px;
+    }
+    .layui-input-block {
+        width: 105%;
+    }
+    .gene-block {
+        margin-left: 36.7%;
+        width: 114.3%;
+    }
+    #form-div {
+        width: 91%;
+    }
+    #from-button {
+        right: -90px;
+    }
+    #table-div {
+        width: 91%;
+        margin: 0 auto;
+    }
+    .layui-form-item .layui-input-inline {
+        left: 0px;
+    }
+    .layui-form-item {
+        margin-left: 0px;
+    }
+    #docDateTable{
+         width: 91%;
+         margin: 0 auto;
+    }
+    .fixed-table-container {
+        border:0px;
+    ｝
+    .columns {
+        margin-right: 14px;
+    }
+    .fixed-table-pagination{
+        margin-left: 19px;
+    }
+
+   
+    /* 中等屏幕（桌面显示器，大于等于992px） */
+    @media (max-width: 992px) {
+       
+    }

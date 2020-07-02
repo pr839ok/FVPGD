@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>后台管理模板</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../static/bootstrap-dropdown/css/bootstrap.min.css" />
+    <link rel="stylesheet" href=".././plugins/layui-v2.4.5/layui/css/layui.css" media="all" />
+    <link rel="stylesheet" href="../css/global.css" media="all" />
+    <link rel="stylesheet" href="../css/font-awesome.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="files/pubDBLibraryDataManager/pubDBLibraryDataManager.css" />
+</head>
+
+<body>
+    <div id="content" class="margin11">
+        <div class="layui-form" id="sample-batch-operation-bar" style="position: relative;margin: 0;">
+            <div class="layui-inline" id="top-left">
+                <div class="layui-inline">
+                    <label class="layui-form-label" style="width: auto;">分库</label>
+                </div>
+                <div class="layui-inline">
+                    <select class="layui-input" id="library-select" lay-verify="required" lay-filter="library-select"></select>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label" style="width: auto;">类型</label>
+                </div>
+                <div class="layui-inline" id="gene-database-search-bar">
+                    <select class="layui-input" id="type-select" lay-verify="required" lay-filter="type-select">
+                        <option value="BLAST">BLAST</option>
+                        <option value="CGMLST">CGMLST</option>
+                        <option value="CRISPR">CRISPR</option>
+                    </select>
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn layui-btn-primary layui-btn-sm shadow layui-hide" id="create-tree-btn">生成进化树</button>
+                </div>
+                <div class="layui-inline">
+                    <p id="pic-name" class="layui-hide"></p>
+                </div>
+                <div class="layui-inline">
+                    <a id="evtree-view" href="javascript:void(0);" class="layui-hide" title="View" style="cursor: pointer;color: blue;"><i class="layui-icon" style="font-size: 30px;">&#xe615;</i></a>
+                </div>
+                <div class="layui-inline">
+                    <a id="evtree-download" href="javascript:void(0);" class="layui-hide" title="Download" style="cursor: pointer;color: blue;"><i class="layui-icon" style="font-size: 30px;">&#xe601;</i></a>
+                </div>
+                <div class="layui-inline">
+                    <p id="last-time" class="layui-hide"></p>
+                </div>
+            </div>
+            <div class="layui-btn-container layui-inline" style="position: absolute; right: -10px;">
+                <!--                 <button class="layui-btn layui-btn-primary layui-btn-sm shadow" id="id_btn_upload_gvcf">
+                    <i class="layui-icon">&#xe67c;</i>上传
+                </button>
+                <button class="layui-btn layui-btn-primary layui-btn-sm shadow" id="phenotype_set_analysis">
+                    <i class="layui-icon">&#xe67c;</i>归档
+                </button> -->
+                <button class="layui-btn layui-btn-primary layui-btn-sm shadow" id="blast">
+                    BLAST建库
+                </button>
+                <li class="dropdown" style="display:inline-block;">
+                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                        <button class="layui-btn layui-btn-primary layui-btn-sm shadow" id="batch-more">分型<span class="caret"></span></button>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right" style="min-width:100px;">
+                        <li><a href="javascript:void(0);" id="cgmlst"><span>cgMLST建库</span></a></li>
+                        <li><a href="javascript:void(0);" id="crispr"><span>CRISPR建库</span></a></li>
+                    </ul>
+                </li>
+                <button class="layui-btn layui-btn-primary layui-btn-sm shadow" id="batch-more-history">
+                    历史
+                </button>
+                <input type="file" name="" id="id_upload_file_input" style="display: none" accept=".xls,.xlsx">
+            </div>
+        </div>
+        <div class="formbox shadow radius-box">
+            <table class="layui-hide" id="storage_sample_table" lay-filter="storage_sample_table"></table>
+        </div>
+    </div>
+    <div class="layui-box" id="analysis-configurator" style="display:none;padding: 15px;">
+        <div class="layui-form">
+            <div class="layui-inline">
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="width: auto;">分库:&emsp;<span id="analysis-library"></span>&emsp;&emsp;类型:&emsp;<span id="analysis-type"></span></label>
+                </div>
+            </div>
+            <div class="layui-inline">
+                <div class="layui-form-item layui-hide" id="crisprlibrary-div">
+                    <label class="layui-form-label">分型库</label>
+                    <div class="layui-inline">
+                        <select id="form-crisprlibrary-select" lay-verify="required" required>
+                            <option value="1" selected="">sakazakii_1_order.fas</option>
+                            <option value="2">sakazakii_2_order.fas</option>
+                            <option value="3">sakazakii_3_order.fas</option>
+                            <option value="6">sakazakii_6_order.fas</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-form">
+            <div class="layui-form-item">
+                <label class="layui-form-label">选择样品</label>
+                <div class="layui-input-block">
+                    <input type="radio" id="cg-allsample" name="samplestate" value="" title="所有样品" lay-filter="samplestate">
+                    <input type="radio" id="cg-noexitsample" name="samplestate" value="noexit" title="未操作样品" lay-filter="samplestate" checked>
+                </div>
+            </div>
+        </div>
+        <table id="sample_table" lay-filter="sample_table"></table>
+    </div>
+    <div class="layui-box layui-form" id="analysis-configurator-check" style="display:none;">
+        <div class="layui-inline analysis-configurator-input-files-panel">
+            <div class="analysis-input-files-group">
+                <div class="analysis-input-files-group-title-bar">
+                    <!--  <fieldset class="layui-elem-field layui-field-title">
+                        <legend>目标样本</legend>
+                    </fieldset> -->
+                </div>
+                <div class="analysis-input-files-group-content">
+                    <ul class="" id="analysis-target-group-tree">
+                        <li>
+                            <div class="treeNode" _pl="15" style="padding-left: 10px">
+                                <span class="treeNode-handler" node-path="" data-file-type="leaf">
+                                    <i class="fa fa-th-large group-icon"></i>
+                                    <span class="nodename file-type" title=''> 成功样本 <span id="sample-num" class="selected-sample-num-label" style="padding-left:10px;"> </span></span>
+                                </span>
+                            </div>
+                        </li>
+                        <ul class="tree-branch" id="tree-success">
+                        </ul>
+                    </ul>
+                </div>
+                <div class="analysis-input-files-group-content">
+                    <ul class="" id="analysis-target-group-tree">
+                        <li>
+                            <div class="treeNode" _pl="15" style="padding-left: 10px">
+                                <span class="treeNode-handler" node-path="" data-file-type="leaf">
+                                    <i class="fa fa-th-large group-icon"></i>
+                                    <span class="nodename file-type" title=''> 失败样本 <span id="sample-num" class="selected-sample-num-label" style="padding-left:10px;"> </span></span>
+                                </span>
+                            </div>
+                        </li>
+                        <ul class="tree-branch" id="tree-fail">
+                        </ul>
+                    </ul>
+                </div>
+                <div class="analysis-input-files-group-content">
+                    <ul class="" id="analysis-target-group-tree">
+                        <li>
+                            <div class="treeNode" _pl="15" style="padding-left: 10px">
+                                <span class="treeNode-handler" node-path="" data-file-type="leaf">
+                                    <i class="fa fa-th-large group-icon"></i>
+                                    <span class="nodename file-type" title=''> 等待样本 <span id="sample-num" class="selected-sample-num-label" style="padding-left:10px;"> </span></span>
+                                </span>
+                            </div>
+                        </li>
+                        <ul class="tree-branch" id="tree-wait">
+                        </ul>
+                    </ul>
+                </div>
+                <div class="analysis-input-files-group-content">
+                    <ul class="" id="analysis-target-group-tree">
+                        <li>
+                            <div class="treeNode" _pl="15" style="padding-left: 10px">
+                                <span class="treeNode-handler" node-path="" data-file-type="leaf">
+                                    <i class="fa fa-th-large group-icon"></i>
+                                    <span class="nodename file-type" title=''> 运行样本 <span id="sample-num" class="selected-sample-num-label" style="padding-left:10px;"> </span></span>
+                                </span>
+                            </div>
+                        </li>
+                        <ul class="tree-branch" id="tree-run">
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="table_main" style="padding: 0px 10px;display:none;">
+        <table class="layui-hide" id="filelist_main" lay-filter="filelist_main" style="display:none;"></table>
+    </div>
+    <div id="table" style="padding: 0px 10px;display:none;">
+        <table class="layui-hide" id="filelist" lay-filter="filelist" style="display:none;"></table>
+    </div>
+    <div id="cgmlstresult" class="layui-tab layui-tab-brief" style="padding: 0px 10px;display:none;">
+        <ul class="layui-tab-title">
+            <li class="layui-this">已入库基因</li>
+            <li>不存在基因</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <table class="layui-hide" id="cg-success-seq" lay-filter="cg-success-seq" style="display:none;"></table>
+            </div>
+            <div class="layui-tab-item" id="cg-noexit-result">
+            </div>
+        </div>
+    </div>
+    <form class="layui-form" action="" id="form" style="display:none;">
+        <div class="layui-form-item" pane="">
+            <div class="layui-input-block">
+                <div class="layui-container" style="width:550px;">
+                    <div class="layui-row" style="margin-top: 15px;">
+                        <div class="layui-col-md3">
+                            <input name="like1[write]" lay-skin="primary" title="direct_repeat" id="direct_repeat" type="checkbox" checked="">
+                        </div>
+                        <div class="layui-col-md9">
+                            <input name="title" lay-verify="title" autocomplete="off" placeholder="" class="layui-input" type="text" id="direct">
+                        </div>
+                    </div>
+                    <div class="layui-row" style="margin-top: 15px;">
+                        <div class="layui-col-md3">
+                            <input name="like1[write]" lay-skin="primary" title="binding_site" id="binding_site" checked="" type="checkbox">
+                        </div>
+                        <div class="layui-col-md9">
+                            <input name="title" lay-verify="title" autocomplete="off" placeholder="" class="layui-input" type="text" id="binding">
+                        </div>
+                    </div>
+                    <div class="layui-row" style="margin-top: 15px;">
+                        <div class="layui-col-md3">
+                            <input name="like1[write]" lay-skin="primary" title="ID" checked="" id="ID_check" type="checkbox">
+                        </div>
+                        <div class="layui-col-md9">
+                            <input name="title" lay-verify="title" autocomplete="off" placeholder="" class="layui-input" type="text" id="ID">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div id="updata_table_div" style="display:none;padding: 0px 10px;">
+        <table id="updata_table" lay-filter="updata_table_filter"></table>
+    </div>
+    <div class="layui-upload" style="display: none;padding: 10px" id="id_div_upload_gvcf">
+        <button type="button" class="layui-btn layui-btn-normal" id="id_btn_sel_upload_files_gvcf">选择文件</button>
+        <div class="layui-upload-list">
+            <table class="layui-table">
+                <thead>
+                    <tr>
+                        <th>文件名</th>
+                        <th>大小</th>
+                        <th>状态</th>
+                        <th>对应样品名</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="id_tbody_upload_gvcf"></tbody>
+            </table>
+        </div>
+        <button type="button" class="layui-btn" id="id_btn_upload_files_gvcf">开始上传</button>
+        <button type="button" class="layui-btn" id="id_btn_upload_clean_gvcf">清除</button>
+    </div>
+    <div id="analyzeResultTableDiv" style="display:none;">
+        <label id="id_default_label"> </label>
+        <!--         <div id="file_tpye_input_div" style="float: right">
+            <label></label>
+            <input type="text" placeholder="请输入文件类型，以;分隔" id="file_tpye_input">
+            </input>
+        </div> -->
+        <div>
+            <table id="analyzeResultTable" lay-filter="analyze-result-table"></table>
+        </div>
+    </div>
+    <div class="layui-box layui-form" id="analysis-history" style="display:none;">
+        <div class="layui-inline analysis-configurator-params-main-panel" style="height: 110px;">
+            <div class="layui-form-item" style="margin-top: 20px;">
+                <label class="layui-form-label">分库</label>
+                <div class="layui-inline">
+                    <select id="form-library-history" name="form-blastlibrary-history" lay-verify="" lay-filter="historylibrary" class="from-select">
+                    </select>
+                </div>
+            </div>
+            <div class="form-workflow-item">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">类型</label>
+                    <div class="layui-inline">
+                        <select id="form-workflow-history" name="form-workflow-history" lay-verify="" lay-filter="historyworkflow">
+                            <option value="BLAST" selected="">BLAST</option>
+                            <option value="CGMLST">CGMLST</option>
+                            <option value="CRISPR">CRISPR</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../static/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../js/jszip.js"></script>
+<script type="text/javascript" src="../js/xlsx.js"></script>
+<script type="text/javascript" src="../static/bootstrap-dropdown/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/util/commonUtil.js"></script>
+<script type="text/javascript" src="../js/util/FileUtil.js"></script>
+<script type="text/javascript" src="../js/util/AdaptiveWindow.js"></script>
+<script type="text/javascript" src=".././plugins/layui-v2.4.5/layui/layui.js"></script>
+<script type="text/javascript" src="../js/mydate.js"></script>
+<script type="text/javascript" src="files/pubDBLibraryDataManager/pubDBLibraryDataManager.js"></script>
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-xs" lay-event="save">入库</a>
+</script>
+<script type="text/html" id="cg-res-index">
+    <a href="/gosweb/pubDB/locus.html?library={{d.library}}&locus={{d.seq}}&Allele={{d.index}}&file=core" target="_blank" class="layui-table-link">{{d.index}}</a>
+</script>
+<script type="text/html" id="barDemoMain">
+    <a class="layui-btn layui-btn-xs" lay-event="check">查看</a>
+</script>
+<script type="text/html" id="cg-history-btn">
+    <button class="layui-btn layui-btn-xs" lay-event="view-cgm-result">查看</button>
+    <button class="layui-btn layui-btn-xs layui-btn-danger" lay-event="del-cgm-history">删除</button>
+</script>
+<script type="text/html" id="analyze-result-div">
+    <div class="layui-form">
+        <div class="layui-form-item">
+            <input type="radio" value="{{d.batchNum}}_{{d.workflowName}}" name="analyze-result-radio" data-batch-num="{{d.batchNum}}" data-workflow-name="{{d.workflowName}}" data-sample-names="{{d.sampleName}}" data-sample-ids="{{d.sampleId}}" data-pkids="{{d.pkid}}" data-fileType="{{d.data_archive_type}}" class="analyze-result-radio" title=" ">
+        </div>
+    </div>
+</script>
+
+</html>
+<!-- fa-eyedropper fa-flask fa-database-->

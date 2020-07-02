@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link rel="icon" href="images/home/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="statics/bootstrap-3.3.7/css/bootstrap.css">
+    <link href="files/common/libraryheader.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body id="box">
+    <div id="nss" style="display: none;">
+        <ul class="layui-nav">
+            <li class="layui-nav-item">
+                <a href="home.html" style=""><img src="images/home/GDIM.png" class="layui-nav-img" ></a>
+                <!-- <a href="home.html" style="display: inline;padding: 0px;"><img src="images/home/GDAC.png" class="layui-nav-img" ></a> -->
+            </li>
+            <!-- <li class="layui-nav-item layui-this" style=""><a href="index.html" target="" class="rr">Home</a></li> -->
+            <!-- <li class="layui-nav-item">
+                <a href="javascript:;">library</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="escherichia.html" class="tim">Escherichia</a></dd>
+                </dl>
+            </li> -->
+            <li class="layui-nav-item layui-this" style=""><a href="javascript:void(0);" onclick="js_search()" class="rr">Search</a></li>
+            <li class="layui-nav-item" style=""><a href="javascript:void(0);" onclick="js_map()" class="rr">Map</a></li>
+            <li class="layui-nav-item">
+                <a href="javascript:void(0);" onclick="js_cgmlst()" class="rr">Typing</a>
+<!--                 <dl class="layui-nav-child">
+                    <dd><a href="javascript:void(0);" onclick="js_cgmlst()" class="tim">cgMLST</a></dd>
+                    <dd><a href="javascript:void(0);" onclick="js_crispr()"  class="tim">CRISPR</a></dd>
+                </dl> -->
+            </li>
+            <li class="layui-nav-item" style=""><a  href="javascript:void(0);" onclick="js_blast()" class="rr">Tools</a></li>
+            <li class="layui-nav-item" style=""><a href="about.html" class="rr">About</a></li>
+        </ul>
+    </div>
+    <div style="width: 1353px;margin: 0 auto;">
+        <a class="navbar-brand" href="index.html" style="margin-left: 5%;"><img src="images/home/GDIM.png" id="img_logo" style="   
+           max-width:70%; width: 142px;margin-bottom: 0;"></a>
+    <a class="navbar-brand" href="index.html" style="margin-left: -3%;"><img src="images/home/GDAC.png" id="img_logo" style="   
+           max-width:70%; width: 142px;margin-bottom: 0;"></a>
+    <div class="container" id="h2_1" style="width: 1080px;">
+        <h2 class="tab-h2" id="tab-h2"></h2>
+        <p class="tab-p">by Guangdong Institute of Microbiology</p>
+    </div></div>
+    <nav class="navbar navbar-default">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <!-- <li class="layui-nav-item " style=""><a href="index.html" >Home</a></li> -->
+                <!-- <li class="dropdown layui-nav-item">
+                        <a href="" class="dropdown-toggle "  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">library <span class="caret"></span></a>
+                        <ul class="dropdown-menu" style="text-align: center;">
+                            <li><a href="escherichia.html" id="" class="" style="line-height: 28px;font-size: 16px">Escherichia</a></li>
+                        </ul>
+                    </li> -->
+                <!-- <li class="dropdown layui-nav-item">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Library <span class="caret"></span></a>
+                    <ul class="dropdown-menu" style="text-align: center;">
+                        <li><a href="javascript:void(0);" onclick="js_escherichia()" style="line-height: 28px;font-size: 16px">Escherichia</a></li>
+                        <li><a href="javascript:void(0);" onclick="js_campylobacter()" style="line-height: 28px;font-size: 16px">Campylobacter</a></li>
+                        <li><a href="javascript:void(0);" onclick="js_VP()" style="line-height: 28px;font-size: 16px">VP</a></li>
+                    </ul>
+                </li> -->
+                <li class="layui-nav-item layui-this" style="" id="starin-tab"><!-- <a href="javascript:void(0);" onclick="js_escherichia()" >Escherichia</a> --></li>
+                <li class="layui-nav-item layui-this" style=""><a href="javascript:void(0);" onclick="js_search()" >Search</a></li>
+                <li class="layui-nav-item" style=""><a href="javascript:void(0);" onclick="js_map()" >Map</a></li>
+                <li class="layui-nav-item" style=""><a href="javascript:void(0);" onclick="js_cgmlst()" >Typing</a></li>
+<!--                 <li class="dropdown layui-nav-item">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Typing </a> -->
+                    <!-- <span class="caret"></span> -->
+                    <!-- <ul class="dropdown-menu" style="text-align: center;">
+                        <li><a href="javascript:void(0);" onclick="js_cgmlst()"   style="line-height: 28px;font-size: 16px" >cgMLST</a></li>
+                        <li><a href="javascript:void(0);" onclick="js_crispr()"  style="line-height: 28px;font-size: 16px">CRISPR</a></li>
+                    </ul> -->
+                <!-- </li> -->
+                <li class="layui-nav-item " style=""><a href="javascript:void(0);" onclick="js_blast()" >Tools</a></li>
+                <li class="layui-nav-item" style=""><a href="about.html" class="rr">About</a></li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+    </nav>
+    <header>
+    </header>
+</body>
+<!-- <script src="statics/jquery-1.9.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="statics/bootstrap-3.3.7/js/bootstrap.js"></script>
+<script type="text/javascript" src="../plugins/layui-v2.4.5/layui/layui.js"></script> -->
+<script src="files/common/header.js"></script>
+
+</html>

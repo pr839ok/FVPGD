@@ -1,0 +1,279 @@
+#title-div {
+    width: 1024px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.layui-card-header {
+    /*border: 1px solid darkgray;*/
+    border-bottom: 0px;
+    font-size: 25px;
+    background-color: #f2f2f2;
+    text-align: center;
+    font-weight: bold;
+    font-family: Verdana;
+}
+
+.layui-card-container {
+    overflow: hidden;
+}
+
+.layui-card-body {
+    /*  border: 1px solid darkgray;*/
+    border-top: 0px;
+    font-size: 12px;
+    min-height: 168px;
+
+}
+
+.layui-col-md8 p {
+    font-size: 14px;
+}
+
+#strains-header {
+    background-color: white;
+    border: 0px;
+    padding: 0 0px;
+}
+
+#strains-body {
+    border: 0px;
+    border-top: 1px solid #eeeeee;
+}
+
+#img_1 {
+    padding: 20px 20px;
+    border-top: 0px;
+    border-left: 0px;
+}
+
+#classification {
+    border: 1px solid darkgray;
+    margin-left: 10px;
+}
+
+#classification-img {
+    width: 300px;
+    height: 300px;
+    margin-left: 10px;
+}
+
+.grid-img {
+    /* width: 130px;*/
+    height: 73px;
+    margin-top: 20px;
+}
+
+.layui-col-md4 {
+    text-align: center;
+}
+
+.layui-col-md12 {
+    margin-top: 30px;
+}
+
+.grid-class {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+#head-in{
+    margin-bottom: 9px;
+}
+
+.layui-col-md5 {
+    border: 1px solid darkgray;
+}
+
+.layui-col-md8 {
+    padding-right: 8px;
+}
+
+#strains-header_1 {
+    background-color: white;
+    border: 0px;
+    margin-top: 60px;
+}
+
+#introduction-img {
+    width: 217px;
+height: 196px;
+}
+
+#tools-2 {
+    margin-top: 14px;
+}
+
+#strains-header p {
+    background-color: #f2f2f2;
+}
+
+.layui-card-header {
+    padding: 0px;
+    margin-top: 60px;
+}
+
+#head-in {
+    margin-top: 0px;
+}
+
+.layui-btn-container {
+    font-size: 16px;
+}
+
+.layui-btn {
+    display: inline-block;
+    height: 46px;
+    line-height: 38px;
+    padding: 0 18px;
+    background-image: url(../../images/home/u5.jpg);
+    color: #fff;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 14px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.btn_s {
+    /* text-align: center;*/
+}
+
+.layui-containers {
+    margin-bottom: 40px;
+    width: 90%;
+}
+
+.btn_s3 {
+    float: right;
+    text-align: right;
+}
+
+.btn_s9 {
+    text-align: right;
+}
+
+.strains-header p {
+    background-color: #f2f2f2;
+}
+
+.clear {
+    clear: both;
+}
+
+#strains-header_1 {
+    background-color: #f2f2f2;
+
+}
+
+.btn-l {
+    background-color: #acaeae;
+    width: 195.2px;
+}
+
+.layui-btn-container .layui-btn {
+    margin-right: 0px;
+    margin-bottom: 10px;
+}
+
+#searchButton {
+    height: 38px;
+}
+
+#label-s {
+    text-align: center;
+}
+
+#search_div {
+    margin-top: 30px;
+}
+
+#strains-body {
+    padding: 13px 1px;
+    line-height: 24px;
+    margin-top: 9px;
+}
+
+/* 小屏幕（平板，大于等于768px） */
+.layui-btn {
+    display: inline-block;
+    height: 27px;
+    line-height: 28px;
+    padding: 0 6px;
+    background-image: url(../../images/home/u5.jpg);
+    color: #fff;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 13px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.layui-col-md33 {
+    width: 27.2%;
+    margin-right: 33px;
+    margin-top: 24px;
+}
+
+#body-in {
+    font-size: 16px;
+}
+
+/*.h_div {
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
+    border-color: #e6e6e6;
+}*/
+
+@media (max-width: 768px) {
+    #title-div {
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+
+    #img_1 img {
+        display: none;
+    }
+
+    .layui-card-body {
+        font-size: 15px;
+    }
+
+    .btn_s3 {
+        float: none;
+        text-align: left;
+    }
+
+    .btn_s9 {
+        text-align: left;
+    }
+
+    .grid-img {
+        display: none;
+    }
+
+    .layui-btn {
+        text-align: left;
+    }
+
+    #strains-header_1 {
+        margin-top: 200px;
+    }
+
+    .layui-card-body {
+        border-bottom: 0px;
+        margin-bottom: 0px;
+
+    }
+
+    ｝
+
+    /* 中等屏幕（桌面显示器，大于等于992px） */
+    @media (max-width: 992px) {}

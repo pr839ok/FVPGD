@@ -1,0 +1,138 @@
+#title-div {
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+input {
+    display: inline;
+}
+
+p {
+    /*display: inline;
+    text-align: center;*/
+}
+
+#ASM {
+    padding-top: 30px;
+    /*padding-bottom: 40px;*/
+    font-weight: 200;
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+.rslt {
+    width: 1000px;
+    margin: 0 auto;
+    /*padding-top: 30px;
+	padding-bottom: 80px;*/
+    background-color: white;
+
+}
+
+.seq {
+    font-family: Courier New, monospace;
+}
+
+#locus {
+    cursor: pointer;
+}
+
+#sa {
+    float: left;
+    text-align: right;
+    width: 8em;
+    white-space: nowrap;
+    margin-right: 0.5em;
+    margin-left: 3em;
+}
+
+#explorer {
+    border: 1px solid #ada;
+    color: black;
+    background: #eee;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px #aaa;
+    margin: 1em 1.5em;
+    cursor: pointer;
+}
+
+#ss_div {
+    margin-bottom: 60px;
+    display: none;
+}
+
+h2 {
+    font: 600 1.2em Arial, Helvetica, sans-serif;
+    color: #606060;
+}
+
+h1 {
+    font: italic 800 1.5em/110% Arial, Helvetica, sans-serif;
+    text-align: left;
+    line-height: 110%;
+    /*color: #606080;
+    border-top: solid #a0a0d0 3px;
+    border-bottom: dotted #8080b0 1px;
+    background: #f0f0f0;*/
+}
+
+.data dt {
+    float: left;
+    clear: left;
+    /*//width: 12em;*/
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: right;
+    font-weight: bold;
+    color: #404080;
+}
+
+.data dd {
+    margin: 0 0 0 7em;
+    padding: 0 0 1em 0;
+}
+
+/* 小屏幕（平板，大于等于768px） */
+@media (max-width: 768px) {
+    #from_result {
+        width: 90%;
+        /*margin: 1px;*/
+    }
+
+    .title {
+        /*width: 100%;*/
+    }
+
+    .layui-form-label {
+        width: 130px;
+    }
+
+    .rslt {
+        width: 100%;
+    }
+
+    .rprt {
+        padding: 0px;
+    }
+
+    .title {
+        width: 100%;
+    }
+
+    #Downloads-list {
+        margin-left: 37px;
+    }
+
+    .layui-table {
+        width: 100%;
+    }
+
+    #loadFile {
+        width: 100%;
+    }
+}
+
+/* 中等屏幕（桌面显示器，大于等于992px） */
+@media (max-width: 992px) {}

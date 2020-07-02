@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BLASTN</title>
+    <link rel="icon" href="images/home/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="statics/bootstrap-3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="statics/bootstrap-table-master/src/bootstrap-table.css">
+    <link rel="stylesheet" href="statics/layui-v2.4.5/layui/css/layui.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="statics/webupload/webuploader.css" />
+</head>
+
+<body>
+    <div id="header" style="display: none;"></div>
+    <div id="title-div">
+        <div class="layui-tab">
+            <ul class="layui-tab-title">
+                <li class="layui-this"><a href="javascript:void(0);" onclick="js_blastn()">blastn</a></li>
+                <li><a href="javascript:void(0);" onclick="js_blastp()">blastp</a></li>
+                <li><a href="javascript:void(0);" onclick="js_blastx()">blastx</a></li>
+                <li><a href="javascript:void(0);" onclick="js_tblastn()">tblastn</a></li>
+                <li><a href="javascript:void(0);" onclick="js_tblastx()">tblastx</a></li>
+            </ul>
+        </div>
+        <div class="layui-collapse" style="">
+            <div class="layui-colla-item">
+                <h2 class="layui-colla-title"><span >Standard Nucleotide BLAST</span></h2>
+                <div class="line-div" style=""></div>
+                <div id="show-content-1" class="layui-colla-content layui-show">
+                    <fieldset class="layui-elem-field">
+                        <div id="job-title-jbt" class="">
+                            <p style="display: inline;" id="jbt"><span>Job Title</span></p>
+                            <input id="" type="text" value="" class="job_title_input_jtb" placeholder="" />
+                        </div>
+                        <legend>
+                            <div id="Query-title">
+                                <p><span>&nbsp;Query Sequence</span></p>
+                            </div>
+                        </legend>
+                        <div class="layui-field-box">
+                            <div class="layui-row">
+                                <div class="layui-col-md12">
+                                    <form class="layui-form" action="">
+                                        <!-- div id="" class="ax_default box_1">
+                            <div class="layui-col-md2" id="second_md">
+                                <div id="">
+                                    <p><span>Database</span></p>
+                                </div>
+                            </div>
+                            <div class="layui-col-md5">
+                                <div>
+                                    <select id="Database-select">
+                                        <option selected value="All species's RNA">All species's RNA</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div> -->
+                                        <div class="layui-form-item" id="">
+                                            <div id="">
+                                                <div id="" class="text ">
+                                                    <div id="radioFasta_a">
+                                                        <div class="layui-form-item">
+                                                            <div class="layui-input-block" style="margin-left:0px;">
+                                                                <input type="radio" name="selectRadio" value="0" title="Fasta">
+                                                                <p style="display: inline;" id="pFasta_a">
+                                                                    <!-- <span id="fasta_span">Fasta</span> -->
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="job-title" class="" style="display: none;">
+                                                        <p style="display: inline;"><span>Job Title</span></p>
+                                                        <input id="" type="text" value="" class="job_title_input" placeholder="" />
+                                                    </div>
+                                                    <div id="job-textarea" class="">
+                                                        <textarea id="" class="query_input_div"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="from-to-div">
+                                                <div id="subrange-div" class=" ">
+                                                    <p><span>Query subrange</span></p>
+                                                </div>
+                                                <div id="" class="" style="display: inline;">
+                                                    <div id="" class="text " style="display: inline;">
+                                                        <p style="display: inline;"><span>From</span>
+                                                            <input id="from" type="text" value="" />
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div id="" class="ax_default box_1" style="display: inline;">
+                                                    <div id="" class="text text2" style="display: inline;">
+                                                        <p style="display: inline;margin-left: 20px;"><span>To</span>
+                                                            <input id="to" type="text" value="" />
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="radio-sec">
+                                                <div class="layui-col-md2">
+                                                    <div id="radio-b" class="">
+                                                        <div id="" class="text ">
+                                                            <div id="radioFasta_b">
+                                                                <div class="layui-form-item">
+                                                                    <div class="layui-input-block" style="margin-left:0px;">
+                                                                        <input type="radio" name="selectRadio" value="1" title="File input" checked>
+                                                                        <p style="display: inline;" id="pFasta_b">
+                                                                            <!-- <span id="input_span">File input</span> -->
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="layui-col-md2">
+                                                    <div id="filePicker">Select files</div>
+                                                </div>
+                                            </div>
+                                            <div id="selectFile" style="display: inline;position: relative;top: 34px;">
+                                            <div id="selectFileDiv" style="display: inline;">
+                                                <span id="infoNFS">No files selected</span>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </form>
+                                    <legend>
+                                        <div id="Query-title">
+                                            <p><span>&nbsp;Choose search set and program selection</span></p>
+                                        </div>
+                                    </legend>
+                                    <form class="layui-form" action="">
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label" style="margin-left: 15px;">Database</label>
+                                            <div class="layui-input-block">
+                                                <input type="radio" name="databases" value="genome" title="genome" checked />
+                                                <input type="radio" name="databases" value="cds" title="cds" />
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label" style="margin-left: 15px;">Optimize for</label>
+                                            <div class="layui-input-block">
+                                                <input type="radio" name="task" value="megablast" title=" Optimize for Highly similar sequences (megablast)" checked /><br>
+                                                <input type="radio" name="task" value="dc-megablast" title="More dissimilar sequences (discontiguous megablast)" /><br>
+                                                <input type="radio" name="task" value="blastn" title=" Optimize for Somewhat similar sequences (blastn)" />
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div id="blast-button" class="text ">
+                                        <button id="layuiBlast" class="layui-btn">BLAST</button>
+                                    </div>
+                                </div>
+                                <!-- <div class="layui-col-md2">
+                                    <div id="subrange-div" class=" ">
+                                        <p><span>Query subrange</span></p>
+                                    </div>
+                                    <div id="" class="">
+                                        <div id="" class="text ">
+                                            <p><span>From</span>
+                                                <input id="from" type="text" value="" />
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div id="" class="ax_default box_1">
+                                        <div id="" class="text text2">
+                                            <p><span>To</span>
+                                                <input id="to" type="text" value="" />
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div style="clear: both;"></div>
+                    <form class="layui-form" action="">
+                        <div class="layui-col-md6">
+                            <fieldset class="layui-elem-field" id="parameters-1">
+                                <legend>
+                                    <p id="max-target"><span>General Parameters</span></p>
+                                </legend>
+                                <div class="layui-field-box box_new" style="margin-top: 20px;">
+                                    <div id="" class="box-1-1">
+                                        <div class="layui-col-md6" style="line-height: 36px;">
+                                            <p style="display: inline;">Max target sequence</p>
+                                        </div>
+                                        <div class="layui-col-md3">
+                                            <select id="max_target_seqs_input" class="max_target_seqs_input" style=" ">
+                                                <option value="10">10</option>
+                                                <option value="50">50</option>
+                                                <option value="100" selected="selected">100</option>
+                                                <option value="250">250</option>
+                                                <option value="500">500</option>
+                                                <option value="1000">1000</option>
+                                                <option value="5000">5000</option>
+                                                <option value="10000">10000</option>
+                                                <option value="20000">20000</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div id="u429_text" class="box-1-1">
+                                        <div class="layui-col-md6" style="line-height: 36px;">
+                                            <p style=""><span>Word size</span></p>
+                                        </div>
+                                        <div class="layui-col-md3">
+                                            <select id="word_size_input" class="word_size_input" style="">
+                                                <option value="36">36</option>
+                                                <option value="32">32</option>
+                                                <option selected value="28">28</option>
+                                                <option value="24">24</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div id="" class="box-1-1" style="">
+                                        <div class="layui-col-md6" style="line-height: 31px;">
+                                            <span>Expect threshold</span>
+                                        </div>
+                                        <div class="layui-col-md3">
+                                            <input id="u433_input" type="text" value="10" class="evalue_input" style="width: 121px;" />
+                                        </div>
+                                    </div>
+                                    <div id="u434_text" class="box-1-1">
+                                        <div class="layui-col-md6" style="line-height: 31px;">
+                                            <span>Max matches in a query range</span>
+                                        </div>
+                                        <div class="layui-col-md3">
+                                            <input id="u435_input" type="text" value="0" class="culling_limit_input" style="width: 121px;" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="layui-col-md6 filters">
+                            <fieldset class="layui-elem-field" id="parameters-1">
+                                <legend>
+                                    <p id="max-target"><span>Scoring Parameters</span></p>
+                                </legend>
+                                <div class="layui-field-box box_new" style="margin-top: 20px;">
+                                    <div id="" class="box-2 ">
+                                        <div class="layui-col-md5" style="line-height: 32px;">
+                                            <p ><span>Match/Mismatch Scores</span></p>
+                                        </div>
+                                        <div class="layui-col-md7">
+                                            <input id="u441_input" type="text" value="-2" class="penalty_input" style="width: 121px;" /> -
+                                            <input id="u441_1_input" type="text" value="1" class="reward_input"  style="width: 121px;"/>
+                                        </div>
+                                    </div>
+                                    <div id="" class="box-2">
+                                        <div class="layui-col-md5" style="line-height: 32px;">
+                                            <p st><span>Gap Costs</span></p>
+                                        </div>
+                                        <div class="layui-col-md7">
+                                            <input id="u442_input" type="text" value="5" class="gapopen_input" style="width: 121px;"/> -
+                                            <input id="u442_1_input" type="text" value="2" class="gapextend_input"  style="width: 121px;"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div style="clear: both;"></div>
+                    </form>
+                    <!-- <div class="layui-col-md5">
+                        <fieldset class="layui-elem-field" id="parameters-1">
+                            <legend>
+                                <p id="max-target"><span>General Parameters</span></p>
+                            </legend>
+                            <div class="layui-field-box box_new">
+                                <div class="box-1">
+                                    <p style="display: inline;">Max target sequence</p>
+                                    <select id="" class="max_target_seqs_input" style=" margin-left: 20px;">
+                                        <option selected value="100">100</option>
+                                        <option value="90">90</option>
+                                        <option value="80">80</option>
+                                    </select>
+                                </div>
+                                <div id="u429_text" class="box-1">
+                                    <p style="display: inline;padding-left: 68px;"><span>Word size</span></p>
+                                    <select id="" class="word_size_input" style=" display: inline;margin-left: 22px;">
+                                        <option value="36">36</option>
+                                        <option value="32">32</option>
+                                        <option selected value="28">28</option>
+                                        <option value="24">24</option>
+                                    </select>
+                                </div>
+                                <div id="" class="box-1" style="clear: both;">
+                                    <p style="display: inline;padding-left: 26px;"><span>Expect threshold</span></p>
+                                    <input id="u433_input" type="text" value="10" class="evalue_input" style="display: inline;width:60px;margin-left: 22px;" />
+                                </div>
+                                <div id="u434_text" class="box-1">
+                                    <p style="width: 150px;margin-left: 20px;line-height: 17px;"><span>Max matches in a query range</span></p>
+                                    <input id="u435_input" type="text" value="0" class="culling_limit_input" style="display: inline;width: 60px;position: relative;right: -158px;top: -41px;" />
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="layui-col-md5 filters">
+                        <fieldset class="layui-elem-field" id="parameters-1">
+                            <legend>
+                                <p id="max-target"><span>Scoring Parameters</span></p>
+                            </legend>
+                            <div class="layui-field-box box_new">
+                                <div id="" class="box-2 ">
+                                    <p style="margin-left: 20px;"><span>Match/Mismatch Scores</span></p>
+                                    <input id="u441_input" type="text" value="-2" class="penalty_input" style="width: 40px;display: inline;margin-left: 40px;" /> -
+                                    <input id="u441_1_input" type="text" value="1" class="reward_input" style="width: 40px;display: inline;" />
+                                </div>
+                                <div id="" class="box-2">
+                                    <p style="margin-left: 20px;"><span>Gap Costs</span></p>
+                                    <input id="u442_input" type="text" value="5" class="gapopen_input" style="width: 40px;display: inline;margin-left: 40px;" /> -
+                                    <input id="u442_1_input" type="text" value="2" class="gapextend_input" style="width: 40px;display: inline;" />
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div> -->
+                    <div style="clear: both;"></div>
+                </div>
+            </div>
+        </div>
+        <!-- <div id="input-title">
+            <div id="input-title-c">
+                <div class="layui-collapse">
+                    <div class="layui-colla-item">
+                        <h2 class="layui-colla-title"><p style="font-size:13px;"><span style="font-size:18px;">Algorithm parameters</span><span>&nbsp; </span></p></h2>
+                        <div id="show-content" class="layui-colla-content layui-show" style=" height: 288px;">
+                            <div class="layui-col-md5">
+                                <fieldset class="layui-elem-field" id="parameters-1">
+                                    <legend>
+                                        <p id="max-target"><span>General Parameters</span></p>
+                                    </legend>
+                                    <div class="layui-field-box box_new">
+                                        <div class="box-1">
+                                            <p style="display: inline;">Max target sequence</p>
+                                            <select id="" class="max_target_seqs_input" style=" margin-left: 20px;">
+                                                <option selected value="100">100</option>
+                                                <option value="90">90</option>
+                                                <option value="80">80</option>
+                                            </select>
+                                        </div>
+                                        <div id="u429_text" class="box-1">
+                                            <p style="display: inline;padding-left: 68px;"><span>Word size</span></p>
+                                            <select id="" class="word_size_input" style=" display: inline;margin-left: 22px;">
+                                                <option value="36">36</option>
+                                                <option value="32">32</option>
+                                                <option selected value="28">28</option>
+                                                <option value="24">24</option>
+                                            </select>
+                                        </div>
+                                        <div id="" class="box-1" style="clear: both;">
+                                            <p style="display: inline;padding-left: 26px;"><span>Expect threshold</span></p>
+                                            <input id="u433_input" type="text" value="10" class="evalue_input" style="display: inline;width:40px;margin-left: 22px;" />
+                                        </div>
+                                        <div id="u434_text" class="box-1">
+                                            <p style="width: 150px;margin-left: 20px;"><span>Max matches in a query range</span></p>
+                                            <input id="u435_input" type="text" value="0" class="culling_limit_input" style="display: inline;width: 40px;position: relative;right: -158px;top: -34px;" />
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div class="layui-col-md5 filters">
+                                <fieldset class="layui-elem-field" id="parameters-1">
+                                    <legend>
+                                        <p id="max-target"><span>Scoring Parameters</span></p>
+                                    </legend>
+                                    <div class="layui-field-box box_new">
+                                        <div id="" class="box-2 ">
+                                            <p style="margin-left: 20px;"><span>Match/Mismatch Scores</span></p>
+                                            <input id="u441_input" type="text" value="-2" class="penalty_input" style="width: 40px;display: inline;margin-left: 40px;" /> -
+                                            <input id="u441_1_input" type="text" value="1" class="reward_input" style="width: 40px;display: inline;" />
+                                        </div>
+                                        <div id="" class="box-2">
+                                            <p style="margin-left: 20px;"><span>Gap Costs</span></p>
+                                            <input id="u442_input" type="text" value="5" class="gapopen_input" style="width: 40px;display: inline;margin-left: 40px;" /> -
+                                            <input id="u442_1_input" type="text" value="2" class="gapextend_input" style="width: 40px;display: inline;" />
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                              <div class="layui-col-md3 filters" style="">
+                            <fieldset class="layui-elem-field" id="parameters-1">
+                                <legend>
+                                    <p id="max-target"><span>Filters and Masking</span></p>
+                                </legend>
+                                <div class="layui-field-box">
+                                    <div id="" class="box-3 ">
+                                        <p><span>Filter</span></p>
+                                        <input type="checkbox" name="abc" value="" />&emsp;Low complexity regions
+                                        <br>
+                                        <input type="checkbox" name="abc" value="" />&emsp;Species-specific repeats filter for
+                                        <select id="u455_input">
+                                            <option selected value="Rice">Rice</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="layui-field-box">
+                                    <div id="" class="box-3 ">
+                                        <p><span>Mask</span></p>
+                                        <input type="checkbox" name="abc" value="" />&emsp;Mask for lookup table only
+                                        <br>
+                                        <input type="checkbox" name="abc" value="" />&emsp;Mask lower case letters
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div id="loadingnew" style="display: none;">
+            <!-- <div style="float: left;margin-top: 14px;">
+                <div class="loadEffect">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div><h3 style="float: left;margin-top: 48px;margin-left: 10px;">loading.......</h3> -->
+            <div id="anim" style="display: none;"><i class="layui-icon layui-anim layui-anim-rotate layui-anim-loop" style="margin-top: 8px;">ဂ</i>&nbsp;The analysis is running. </div>
+        </div>
+        <div style="clear: both;"></div>
+        <div id="title">
+            <form class="layui-form" id="form_l" style="display: none;">
+                <div class="layui-form-item">
+                    <div class="layui-col-md4">
+                        <label class="layui-form-label" id="rs_l"></label>
+                    </div>
+                    <div class="layui-col-md7">
+                        <div class="layui-input-block" id="rs_b">
+                            <select name="interest" lay-filter="aihao" id="rs">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="result-div" style="display: none;">
+            <fieldset id="jobTitle" class="layui-elem-field">
+                <legend>
+                    <div id="blast-result">blastNResult-----<p id="brs" style="display:inline"></p>
+                    </div>
+                </legend>
+                <div class="layui-field-box result-box" style="">
+                    <div id="">
+                        <div class="layui-container">
+                            <div class="layui-row">
+                                <div class="layui-col-md5">
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label label-head">Date:</label>
+                                        <label class="layui-form-label label-mid" id="RID_label"></label>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label label-head">Query ID:</label>
+                                        <label class="layui-form-label label-mid" id="QueryID_label"></label>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label label-head">Molecule Type:</label>
+                                        <label class="layui-form-label label-mid" id="Molecule_label"></label>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label label-head" style="">Query Length:</label>
+                                        <label class="layui-form-label label-mid" id="QueryLength_label" style=""></label>
+                                    </div>
+                                </div>
+                                <div class="layui-col-md5">
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label label-head">Query_title:</label>
+                                        <label class="layui-form-label label-mid" id="query_title"></label>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label label-head">Database Name:</label>
+                                        <label class="layui-form-label label-mid" id="DB_name_label"></label>
+                                    </div>
+                                    <div class="layui-form-item layui-form-text">
+                                        <label class="layui-form-label label-head">Program:</label>
+                                        <label class="layui-form-label label-mid" id="Program_label"></label>
+                                    </div>
+                                    <div class="layui-form-item layui-form-text">
+                                        <label class="layui-form-label label-head">Version:</label>
+                                        <label class="layui-form-label label-mid" id="version"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item layui-form-text" id="DownloadFile">
+                            <a id="tabular-download-tabular">DownloadTabularFile</a>
+                        </div>
+                        <table lay-filter="paired" id="paired">
+                        </table>
+                        <table id="table" class="table table-hover table-bordered"></table>
+                        <div id="Download">
+                            <div class="layui-form-item layui-form-text" id="DownloadFile">
+                                <a id="tabular-download-pair">DownloadAsnFile</a>
+                            </div>
+                            <div id="resultRequenceHead-div"></div>
+                            <div id="resultRequence-div"></div>
+                            <div id="resultRequence"></div>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="clear" style="clear: both;"></div>
+    </div>
+    <div id="footer" style="display: none;"></div>
+</body>
+<script src="statics/jquery-1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="statics/js/util/commonUtil.js"></script>
+<script src="files/common/common.js"></script>
+<link href="files/blast_n/blast_n.css" type="text/css" rel="stylesheet" />
+<link href="files/common/librarycommon.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="statics/layui-v2.4.5/layui/layui.js"></script>
+<script type="text/javascript" src="statics/webupload/webuploader.js"></script>
+<script type="text/javascript" src="statics/bootstrap-3.3.7/js/bootstrap.js"></script>
+<script type="text/javascript" src="statics/bootstrap-table-master/src/bootstrap-table.js"></script>
+<script type="text/javascript" src="statics/bootstrap-table-master/src/bootstrap-table-zh-CN.js"></script>
+<script src="files/blast/blast_common.js"></script>
+<script src="files/blast_n/blastn_l.js"></script>
+<script type="text/html" id="titleTpl">
+    <a href="sequence_detailed.html?strain={{d.strain}}" class="layui-table-link">{{d.strain}}</a>
+</script>
+<link href="files/common/blastcommon.css" type="text/css" rel="stylesheet" />
+
+</html>

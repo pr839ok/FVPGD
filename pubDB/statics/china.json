@@ -1,0 +1,32 @@
+[
+    {
+        "code": "AD", 
+        "latitude": 35.86166, 
+        "longitude": 104.195397, 
+        "name": "Haikou"
+    }, 
+    {
+        "code": "AE", 
+        "latitude": 37.09024, 
+        "longitude": -95.712891, 
+        "name": "Taiyuan"
+    },
+    {
+        "code": "AD", 
+        "latitude": 36.204824, 
+        "longitude": 138.252924,
+        "name": "Shanghai"
+    }, 
+    {
+        "code": "AE", 
+        "latitude": 20.593684, 
+        "longitude": 78.96288, 
+        "name": "Fuzhou"
+    },
+    {
+        "code": "AD", 
+        "latitude": 42.546245, 
+        "longitude": 1.601554, 
+        "name": "Shenzhen"
+    }
+]

@@ -1,0 +1,206 @@
+#title-div {
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.layui-card-header {
+    border: 1px solid black;
+    border-bottom: 0px;
+    font-size: 25px;
+    background-color: #f2f2f2;
+}
+
+.layui-card-body {
+    border: 1px solid black;
+    margin-bottom: 30px;
+    border-top-color: darkgray;
+}
+
+#strains-header {
+    background-color: white;
+    border: 0px;
+}
+
+#strains-body {
+    border: 0px;
+    /*border-top: 1px solid black;
+    ;*/
+}
+
+#classification {
+    border: 1px solid darkgray;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-left: 0px;
+     border-right: 0px;
+     padding-top: 16px;
+    }
+.fo{
+    font-size: 18px;
+    color: black;
+}
+#classification-img {
+    width: 282px;
+height: 262px;
+margin-left: 10px;
+margin-top: 19px;
+}
+
+.grid-img {
+    /*width: 107px;*/
+    height: 107px;
+}
+
+.grid-class {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.layui-col-md5 {
+    border: 1px solid darkgray;
+}
+
+#strains-header_1 {
+    background-color: white;
+    border: 0px;
+    margin-top: 30px;
+}
+
+#tool-1:hover {
+    border: 1px solid #e6e6e6;
+    cursor: pointer;
+}
+
+#tool-2:hover {
+    border: 1px solid #e6e6e6;
+    cursor: pointer;
+}
+
+#tool-3:hover {
+    border: 1px solid #e6e6e6;
+    cursor: pointer;
+}
+
+.layui-card-header {
+   /* border: 1px solid black;*/
+   /* border-bottom: 1px solid darkgray;*/
+    font-size: 25px;
+    background-color: #f2f2f2;
+   /* width: 995px;*/
+    margin: 0 auto;
+    border-left: 0px;
+    border-top: 0px;
+    border-right: 0px;
+}
+
+.layui-tab-content {
+    padding: 0px;
+   /* border: 1px solid darkgray;*/
+}
+.layui-tab-content{
+    height: 354px;
+}
+.layui-col-md4{
+    /*border: 1px solid white;*/
+}
+.btn_s{
+   /* text-align: center;*/
+}
+.layui-containers{
+    margin-bottom: 16px;
+    width: 90%;
+}
+.btn_s3{
+    float: right;text-align: right;
+    margin-top: 0px;
+}
+.btn_s9{
+    text-align: right;
+}
+.strains-header p{
+    background-color: #f2f2f2;
+}
+.clear {
+  clear: both;
+  }
+#strains-header_1{
+    background-color: #f2f2f2;
+    
+  }
+.btn-l{
+    background-color: #acaeae;
+    width: 195.2px;
+}
+.layui-btn-container .layui-btn {
+    margin-right: 0px;
+    margin-bottom: 10px;
+}
+#searchButton{
+    height: 38px;
+}
+#label-s{
+    text-align: center;
+}
+#search_div{
+    margin-top: 30px;
+}
+.layui-btn {
+    display: inline-block;
+    height: 46px;
+    line-height: 38px;
+    padding: 0 18px;
+    background-image:url(../../images/home/u5.jpg);
+    color: #fff;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 14px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+#head-in{
+    margin-top: 0px;
+}
+.layui-btn-container {
+    font-size: 16px;
+}
+.layui-col-md3{
+    text-align: center;
+    margin-top: 10px;
+}
+.click-btn{
+    cursor: pointer;
+/*color: #8582f8;;*/
+}
+.select-type{
+    color: #5074b2;
+}
+.typing-select{
+    cursor: pointer;
+    font-size: 12px;
+    margin-left: 10px;
+}
+/* 小屏幕（平板，大于等于768px） */
+@media (max-width: 768px) {
+    #title-div {
+        width: 100%;
+    }
+    #classification-img{
+        display: none;
+    }
+    .layui-tab-content{
+        height: auto;
+    }
+    .layui-card-header {
+        width: 100%
+    }
+    .layui-card-header {
+        font-size: 23px;
+    }
+    .grid-img{
+        display: none;
+    }
+｝

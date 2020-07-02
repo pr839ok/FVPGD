@@ -1,0 +1,35 @@
+var children_pubDB = [{
+	"title": "菌株公开库",
+	"icon": "images/GOS-2/菌株公开库.png",
+	"spread": true,
+	"prefix": "PUBDB",
+	"children": [{
+        "title": "菌株数据管理",
+        "icon": "images/GOS-2/菌株数据管理.png",
+        "href": "pubDB/pubDBLibrary.html",
+        "id":"FPBDBDataManager"
+    },
+	/*{
+        "title": "菌株数据管理",
+        "icon": "images/GOS-2/菌株数据管理.png",
+        "href": "pubDB/pubDBDataManager.html",
+        "id":"pubDBDataManager"
+    },*/{
+		"title": "测序数据",
+		"icon": "images/GOS-2/测序数据.png",
+		"href": "sampleMerge.html?workflowPluginsType=FPBDB",
+		"id":"FPBDBSampleManager"
+	}, {
+		"title": "菌株流程",
+		"icon": "images/GOS-2/菌株流程.png",
+		"href": "workflow.html?sampleType=0&workflowPluginsType=FPBDB",
+		"id":"FPBDBProcessConfiguration"
+	}, {
+		"title": "分析结果",
+		"icon": "images/GOS-2/分析结果.png",
+		"href": "analysisLog.html?&workflowPluginsType=FPBDB",
+		"id":"FPBDBAnalysisMonitor"
+	}]
+}];
+
+

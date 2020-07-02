@@ -1,0 +1,76 @@
+ .layui-tab-title .layui-this{
+         background-image: url(../../images/home/u5.jpg);
+    }
+    .layui-tab-title li a{
+        font-weight: 600;
+        color: black;
+    }
+   .layui-tab-title .layui-this a{
+    color: white;
+    
+   }
+    #Query-title {
+    background-color: #d1cfcf;
+    width: 105%;
+}
+.webuploader-pick {
+    padding: 4px 0;
+    margin-top: 18px;
+    width: 71%;
+    margin-left: 11px;
+}
+#selectFile {
+    position: relative;
+    top: 21px;
+    left: -16px;
+}
+.layui-input-block {
+    margin-left: 110px;
+    min-height: 36px;
+   
+    padding-top: 5px;
+}
+
+
+.layui-btn {
+
+    display: inline-block;
+    height: 32px;
+    line-height: 24px;
+    padding: 0 18px;
+    background-color: #009688;
+    color: #fff;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 14px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+
+}
+.box-1 {
+    margin-left: 18px;
+    margin-top: 16px;
+}
+.box-1 select{
+    display: inline;
+margin-left: 22px;
+width: 60px;
+}
+#blast-button {
+    margin-left: 112px;
+    margin-top: 10px;
+    margin-bottom: 7px;
+}
+.layui-form-label {
+    float: left;
+    display: block;
+    
+    width: 80px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+}
+.layui-col-md2 {
+    width: 16.66666667%;
+}

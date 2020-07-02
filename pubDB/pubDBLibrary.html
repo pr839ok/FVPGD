@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>后台管理模板</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../static/bootstrap-dropdown/css/bootstrap.min.css" />
+    <link rel="stylesheet" href=".././plugins/layui-v2.4.5/layui/css/layui.css" media="all" />
+    <link rel="stylesheet" href="../css/global.css" media="all" />
+    <link rel="stylesheet" href="../css/font-awesome.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="files/pubDBLibrary/pubDBLibrary.css" />
+    <link rel="stylesheet" type="text/css" href="../plugins/layui-formSelects-master/dist/formSelects-v4.css" />
+</head>
+
+<body>
+    <div id="content" class="margin11">
+        <div class="layui-form" id="sample-batch-operation-bar" style="position: relative;margin: 0;">
+            <div class="titlebox">
+                <div class="titlefont">数据管理</div>
+            </div>
+            <div class="layui-btn-container layui-inline" style="position: absolute; right: -10px;">
+                <button class="layui-btn layui-btn-primary layui-btn-sm shadow" id="id_btn_addlibrary">
+                    <i class="layui-icon">&#xe654;</i>新建分库
+                </button>
+            </div>
+        </div>
+        <div id="library_div" class="layui-row layui-col-space20 layui-form" style="padding: 10px;">
+        </div>
+    </div>
+    <div id="library_edit_add_div" class="layui-form" style="display: none;padding: 20px;">
+        <div class="layui-form-item">
+            <label class="layui-form-label">分库名</label>
+            <div class="layui-input-block">
+                <input type="text" id="ea-name" required lay-verify="required" placeholder="请输入分库名" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">类型</label>
+            <div class="layui-input-block">
+                <input type="checkbox" id="type-blast" title="BLAST" checked>
+                <input type="checkbox" id="type-cgmlst" title="CGMLST" checked>
+                <input type="checkbox" id="type-crispr" title="CRISPR" checked>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">关联基因库</label>
+            <div class="layui-input-block">
+                <select xm-select="genedb-select"></select>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../static/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../static/bootstrap-dropdown/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/util/AdaptiveWindow.js"></script>
+<script type="text/javascript" src="../js/util/commonUtil.js"></script>
+<script type="text/javascript" src=".././plugins/layui-v2.4.5/layui/layui.js"></script>
+<script type="text/javascript" src="../js/mydate.js"></script>
+<script type="text/javascript" src="files/pubDBLibrary/pubDBLibrary.js"></script>
+
+</html>
+<!-- fa-eyedropper fa-flask fa-database-->

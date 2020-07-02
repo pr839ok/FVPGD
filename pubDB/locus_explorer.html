@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>locus_explorer</title>
+    <link rel="icon" href="images/home/favicon.ico" type="image/x-icon"/>
+    <!-- <link href="resources/css/jquery-ui-themes.css" type="text/css" rel="stylesheet" /> -->
+    <!--    <link rel="stylesheet" type="text/css" href="statics/bootstrap-3.3.7/css/bootstrap.css"> -->
+    <link rel="stylesheet" href="statics/layui-v2.4.5/layui/css/layui.css" media="all" />
+    
+</head>
+
+<body>
+         <div id="header" style="display: none;"></div>
+    <div id="title-div">
+        <div class="rprt">
+            <div class="content" style="min-height: 400px">
+                <h1>Locus Explorer - Locus/sequence definitions</h1>
+                <div class="box" id="queryform">
+                    <p class="p">Please select locus for analysis:</p><br>
+                    <p class="p" id="p_locus"><b>Locus: </b>
+                        <select name="locus" id="locus" onmousedown="if(this.options.length>6){this.size=7}" onblur="this.size=0" onchange="this.size=0">
+                        </select>
+                        <span class="comment">Page will reload when changed</span></p><br />
+                    <fieldset class="layui-elem-field layui-field-title">
+                        <legend>Select sequences</legend>
+                        <div class="layui-field-box">
+                            <select name="allele_ids" size="6" multiple="multiple" id="allele_ids" style="width:100%">
+                            </select>
+                            <input type="button" onclick='selectAll(true)' value="All" style="margin-top:1em" class="smallbutton" />
+                            <input type="button" onclick='selectAll(false)' value="None" style="margin-top:1em;margin-bottom: 1em;" class="smallbutton" />
+                            <input type="submit" name="submit" style="float: right;margin-top: 1em;" id="submit_allele_ids" value="Submit" class="submitbutton smallbutton ui-button ui-widget ui-state-default ui-corner-all" />
+                        </div>
+                    </fieldset>
+                </div>
+                <div id="color" style="display: none;">
+                    <p><b>Key: </b><span class="pc10">0 - 10</span> | <span class="pc20">&gt;10 - 20</span> | <span class="pc30">&gt;20 - 30</span> | <span class="pc40">&gt;30 - 40</span> | <span class="pc50">&gt;40 - 50</span> | <span class="pc60">&gt;50 - 60</span> | <span class="pc70">&gt;60 - 70</span> | <span class="pc80">&gt;70 - 80</span> | <span class="pc90">&gt;80 - 90</span> | <span class="pc100">&gt;90 - 100</span></p>
+                
+                <div id="resultRequence"></div>
+                <div id="mytable"><table class="layui-hide" id="filelist" lay-filter="filelist"></table></div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <div id="footer" style="display: none;"></div>
+</body>
+<!-- <script src="resources/scripts/jquery-1.7.1.min.js"></script> -->
+<script src="statics/jquery-1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="statics/layui-v2.4.5/layui/layui.js"></script>
+<script type="text/javascript" src="statics/js/util/commonUtil.js"></script>
+<!-- <script src="files/common/librarycommon.js"></script> -->
+<script src="files/locus_explorer/locus_explorer.js" />
+</script>
+<!-- <script type="text/javascript" src="statics/bootstrap-3.3.7/js/bootstrap.js"></script> -->
+<script type="text/html" id="titleTpl">
+    <a href='locus.html?locus={{d.locus}}&Allele={{d.allele}}&file={{d.fileName}}' class="layui-table-link" target="_black">{{d.allele}}</a>
+</script>
+<script type="text/javascript">
+function selectAll(bool) {
+    var opts = document.getElementById("allele_ids");
+    if (bool) {
+        for (var i = 0; i < opts.length; i++) {
+            opts[i].selected = true;
+        }
+    } else {
+        for (var i = 0; i < opts.length; i++) {
+            opts[i].selected = false;
+        }
+    }
+
+}
+</script>
+<link href="files/locus_explorer/locus_explorer.css" type="text/css" rel="stylesheet" />
+</html>

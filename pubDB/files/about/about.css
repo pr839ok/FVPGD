@@ -1,0 +1,192 @@
+#link-header {
+    background-color: #f2f2f2;
+    border: 1px solid #D2D2D2;
+}
+
+#title-div {
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 50px;
+    /*border: 1px solid #D2D2D2;*/
+    min-height: 280px;
+}
+
+#img-div {
+
+    height: 76px;
+    width: 93px;
+    padding: 16px 0px;
+    margin-right: 4px;
+}
+
+#img-div img {
+    height: 53px;
+width: 72px;
+margin-left: 0px;
+margin-top: 11px;
+}
+
+#img-div i {
+    font-size: 52px;
+}
+
+#img-div span {
+    font-size: 73px;
+    top: 8px;
+}
+
+.col-md-9 {
+    padding-left: 33px;
+}
+
+.layui-tab-title li {
+    width: 118px;
+    display: block;
+    text-align: center;
+    font-size: 19px;
+}
+
+.layui-tab-title {
+    border-bottom-style: none;
+}
+
+.layui-tab-content {
+    position: relative;
+    top: -39px;
+    left: 81px;
+    width: 714px;
+    margin-left: 68px;
+    background-color: #f9f3f3;
+}
+
+#about-div {
+    margin: 0 auto;
+    width: 1000px;
+    background-color: #ccc;
+    min-height: 500px;
+}
+
+.layui-tab {
+    margin: 0px 0;
+    text-align: left !important;
+    padding-top: 18px;
+}
+
+.layui-container {
+    width: 644px;
+    text-align: center;
+}
+
+h2 {
+/*    line-height: 18px;*/
+    font-size: 18px;
+    margin-top: 14px;
+}
+
+.contact-row {
+    /*margin-top: 30px;*/
+    /*border: 1px solid #D2D2D2;*/
+    background-color: #f2f2f2;
+    min-height: 126px;
+    padding: 6px 18px;
+    margin-bottom: 11px;
+    cursor: pointer;
+}
+
+
+.layui-col-md6:hover {
+    border: 1px #ccc solid;
+    cursor: pointer;
+}
+
+.layui-row {
+ /*   margin-top: 30px;*/
+}
+
+.layui-col-md6 {
+    border: 1px white solid;
+    cursor: pointer;
+}
+
+#about-header {
+    /*background-image: url(../../images/about/logo.jpg);*/
+}
+
+#about-header img {
+    /* background-image: url(../../images/about/logo.jpg);*/
+    width: 100%;
+    height: 405px;
+}
+
+p {
+    margin-bottom: 1rem;
+    font-size: inherit;
+    line-height: 1.5;
+    text-rende ring: optimizeLegibility;
+}
+
+#com-logo {
+    /*float: right;*/
+/*width: 214px;*/
+width: 100%;
+cursor: pointer;
+/*margin-right: 61px;*/
+height: 30%;
+}
+
+
+#comlogo-p {
+    /*float: right;*/
+    color: #494997;
+    font-size: 17px;
+}
+
+#comlogo-pp {
+    float: right;
+    color: blue;
+}
+
+#row-logo {
+    /*float: right;*/
+    margin-top: 5px;
+}
+
+#row-logoo {
+    float: right;
+}
+
+#row-logoo i {
+    font-size: 26px;
+}
+
+h1 {
+    font: 25px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 0px 0px 10px 40px;
+    display: block;
+    border-bottom: 1px solid #DADADA;
+    margin: -10px -30px 30px -15px;
+    color: #888;
+    font-weight: bold;
+}
+
+
+/* 小屏幕（平板，大于等于768px） */
+
+@media (max-width: 768px) {
+
+
+
+    #title-div {
+        width: 100%;
+    }
+    #about-div {
+        width: 100%;
+    }
+    .layui-tab-content {
+        position: relative;
+        top: 0px;
+        left: 0px;
+        width: 93%;
+        margin-left: 0px;
+        ｝
+    }

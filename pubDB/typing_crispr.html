@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>后台管理模板</title>
+    <link rel="icon" href="images/home/favicon.ico" type="image/x-icon"/>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../static/bootstrap-dropdown/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../plugins/layui-v2.4.5/layui/css/layui.css" media="all" />
+    <link rel="stylesheet" href="../css/global.css" media="all" />
+    <link rel="stylesheet" href="../css/font-awesome.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="files/typing_crispr/typing_crispr.css" />
+</head>
+
+<body>
+    <div id="content" class="margin11">
+        <div id="sample-search-bar" class="layui-form" style="display: none;">
+            <div id="gene-type-select-div" class="layui-collapse layui-form" style="margin: 15px 0 15px 0;">
+                <div class="layui-colla-item">
+                    <!-- <h2 class="layui-colla-title">数据筛选</h2> -->
+                    <div class="layui-colla-content layui-show layui-form">
+                        <div id="add-condition-item" class="layui-inline">
+                            <div class="layui-inline" id="sample-gene-database-search-bar" style="padding: 10px 0;">
+                                <label class="layui-form-label sample-gene-database-search-label">状态</label>
+                                <div class="layui-inline">
+                                    <select lay-filter="sample-gene-database" id="sample-gene-database-select">
+                                        <option value="">请选择一个状态</option>
+                                        <option value="1">Running</option>
+                                        <option value="2">Waitting</option>
+                                        <option value="3">Succeeded</option>
+                                        <option value="4">Failed</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-form" id="sample-batch-operation-bar" style="position: relative; margin-bottom: -10px;">
+            <div class="layui-inline" style="width: 50%">
+                <div class="layui-btn-container">
+                    <button class="layui-btn layui-btn-primary layui-btn-sm shadow" id="btn_page_help">
+                        <i class="layui-icon">&#xe60b;</i>帮助文档
+                    </button>
+                    <button class="layui-btn layui-btn-primary layui-btn-sm shadow" id="data_select_btn">
+                        <i class="layui-icon">&#xe615;</i>数据筛选
+                    </button>
+                    <button class="layui-btn layui-btn-primary layui-btn-sm log-flush-bar shadow" id="logFlush"><i class="layui-icon">&#x1002;</i>刷新</button>
+                </div>
+            </div>
+            <div class="layui-inline" style="position: absolute;right: 10px">
+                <div class=" layui-inline job-num-bar" style="margin-top: 7px; margin-right: 10px">
+                    <div class="layui-inline job-num" id="job-submitted">
+                        <span style="color: #FFB800;">Submitted:</span>
+                        <span id="submit">0</span>
+                    </div>
+                    <div class="layui-inline job-num" id="job-running">
+                        <span style="color: #01AAED;">Running:</span>
+                        <span id="Running">0</span>
+                    </div>
+                    <div class="layui-inline job-num" id="job-succeeded">
+                        <span style="color: #009688;">Waitting:</span>
+                        <span id="Waitting">0</span>
+                    </div>
+                    <div class="layui-inline job-num" id="job-succeeded">
+                        <span style="color: #009688;">Succeeded:</span>
+                        <span id="Succeeded">0</span>
+                    </div>
+                    <div class="layui-inline job-num" id="job-failed">
+                        <span style="color: #FF5722;">Failed:</span>
+                        <span id="Failed">0</span>
+                    </div>
+                </div>
+                <div class="layui-btn-container layui-inline">
+                    <button class="layui-btn layui-btn-primary layui-btn-sm shadow" id="phenotype_analysis">分析</button>
+                </div>
+            </div>
+        </div>
+        <div class="formbox radius-box">
+            <table class="layui-hide" id="filelist" lay-filter="filelist"></table>
+        </div>
+    </div>
+    <div class="layui-box layui-form" id="analysis-configurator">
+        <div class="layui-inline analysis-configurator-params-main-panel">
+            <fieldset class="layui-elem-field layui-field-title">
+                <legend>分析过程 - 配置</legend>
+            </fieldset>
+            <div class="form-workflow-item">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">工作流</label>
+                    <div class="layui-inline">
+                        <select id="form-workflow-select" name="form-workflow-select" lay-verify="" lay-filter="workflow">
+                            <option value="">请选择一个工作流</option>
+                            <option value="1" selected="">CRISPR</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">分型库</label>
+                    <div class="layui-inline">
+                        <select id="form-crisprlibrary-select" name="form-crisprlibrary-select" lay-verify="" lay-filter="crisprlibrary">
+                            <option value="">请选择一个分型库</option>
+                            <option value="1" selected="">sakazakii_1_order.fas</option>
+                            <option value="1" selected="">sakazakii_2_order.fas</option>
+                            <option value="1" selected="">sakazakii_3_order.fas</option>
+                            <option value="1" selected="">sakazakii_6_order.fas</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-inline analysis-configurator-input-files-panel">
+            <div class="analysis-input-files-group">
+                <div class="analysis-input-files-group-title-bar">
+                    <fieldset class="layui-elem-field layui-field-title">
+                        <legend>目标样本</legend>
+                    </fieldset>
+                </div>
+                <div class="analysis-input-files-group-content">
+                    <ul class="" id="analysis-target-group-tree">
+                        <li>
+                            <div class="treeNode" _pl="15" style="padding-left: 15px">
+                                <span class="treeNode-handler" node-path="" data-file-type="leaf">
+                                    <i class="fa fa-th-large group-icon"></i>
+                                    <span class="nodename file-type" title='' > 选中样本 <span id="sample-num" class="selected-sample-num-label" style="padding-left:10px;"> </span></span>
+                                </span>
+                            </div>
+                        </li>
+                        <ul class="tree-branch">
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="table">
+        <table class="layui-hide" id="filelist1" lay-filter="filelist1"></table>
+    </div>
+    <form class="layui-form" action="" id="form" style="display:none;">
+        <div class="layui-form-item" pane="">
+            <div class="layui-input-block">
+                <div class="layui-container" style="width:550px;">
+                    <div class="layui-row" style="margin-top: 15px;">
+                        <div class="layui-col-md3">
+                            <input name="like1[write]" lay-skin="primary" title="direct_repeat" id="direct_repeat" type="checkbox">
+                        </div>
+                        <div class="layui-col-md9">
+                            <input name="title" lay-verify="title" autocomplete="off" placeholder="" class="layui-input" type="text" id="direct">
+                        </div>
+                    </div>
+                    <div class="layui-row" style="margin-top: 15px;">
+                        <div class="layui-col-md3">
+                            <input name="like1[write]" lay-skin="primary" title="binding_site" id="binding_site" checked="" type="checkbox">
+                        </div>
+                        <div class="layui-col-md9">
+                            <input name="title" lay-verify="title" autocomplete="off" placeholder="" class="layui-input" type="text" id="binding">
+                        </div>
+                    </div>
+                    <div class="layui-row" style="margin-top: 15px;">
+                        <div class="layui-col-md3">
+                            <input name="like1[write]" lay-skin="primary" title="ID" checked="" id="ID_check" type="checkbox">
+                        </div>
+                        <div class="layui-col-md9">
+                            <input name="title" lay-verify="title" autocomplete="off" placeholder="" class="layui-input" type="text" id="ID">
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </form>
+</body>
+<script type="text/javascript" src="../static/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../static/bootstrap-dropdown/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../plugins/layui-v2.4.5/layui/layui.js"></script>
+<script type="text/javascript" src="../js/mydate.js"></script>
+<script type="text/javascript" src="files/typing_crispr/typing_crispr.js"></script>
+<script type="text/html" id="sample-type-div"></script>
+<script type="text/html" id="analyze-result-div">
+    <div class="layui-form">
+        <div class="layui-form-item">
+            <input type="radio" value="{{d.batchNum}}_{{d.workflowName}}" name="analyze-result-radio" data-batch-num="{{d.batchNum}}" data-workflow-name="{{d.workflowName}}" data-sample-names="{{d.sampleName}}" data-sample-ids="{{d.sampleId}}" class="analyze-result-radio" title=" ">
+        </div>
+    </div>
+  </div>
+  </script>
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-xs" lay-event="check">查看</a>
+
+</script>
+<script type="text/html" id="baDemo">
+    <a class="layui-btn layui-btn-xs" lay-event="check">入库</a>
+
+</script>
+</html>

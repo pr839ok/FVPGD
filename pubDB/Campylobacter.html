@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Campylobacter</title>
+    <link rel="icon" href="images/home/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="statics/layui-v2.4.5/layui/css/layui.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="statics/bootstrap-3.3.7/css/bootstrap.css">
+    <link href="files/SpeciesA/SpeciesA.css" type="text/css" rel="stylesheet" />
+    <script src="statics/jquery-1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="statics/layui-v2.4.5/layui/layui.js"></script>
+    <script type="text/javascript" src="statics/bootstrap-3.3.7/js/bootstrap.js"></script>
+    <script src="files/common/librarycommon.js"></script>
+    <script src="files/SpeciesA/SpeciesA.js"></script>
+</head>
+
+<body>
+    <div id="header" style="display: none;"></div>
+    <div id="title-div">
+        <div class="">
+            <div class="layui-tab layui-tab-card">
+                <div class="layui-tab-content">
+                    <div class="layui-tab-item layui-show">
+                        <div class="layui-card-header" style="text-align: center;">Introduction of Campylobacter </div>
+                        <div class="layui-col-md8">
+                            <div class="layui-card-body" id="classification">
+                                Campylobacter is a class of Gram-negative bacilli that are mainly parasitic in the gut of mammals and birds. The main causes of human disease are Campylobacter jejuni and Campylobactercoli, but the former are more common.
+                            </div>
+                        </div>
+                        <div class="layui-col-md3">
+                            <img src="images/home_new/u33.jpg" id="classification-img">
+                        </div>
+                        </div>
+                        <div class="layui-tab-item">2</div>
+                        <div class="layui-tab-item">3</div>
+                    </div>
+                </div>
+            </div>
+            <div id="librarytools" style="display: none;"></div>
+           <!--  <div class="layui-card">
+                <div class="layui-card-header" id="strains-header">
+                    
+                </div>
+                <div class="layui-card-body" id="strains-body">
+                    <div class="layui-btn-container" style="width: 100%; margin: 0 auto;">
+                        <div class="layui-container layui-containers" style="width: 997px;">
+                            <div class="layui-row">
+                                <div class="layui-col-md3 btn_s">
+                                    <img src="images/home/map.jpg" class="grid-img" />
+                                </div>
+                                <div class="layui-col-md9 click-btn" id="map" >
+                                    <p><p class="fo select-type">Map</p>It Provides the distribution of this Species around the world and the specific distribution of each country.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-container layui-containers" id="blast" style="width: 997px;">
+                            <div class="layui-row">
+                                <div class="layui-col-md3 btn_s btn_s3">
+                                    <img src="images/home/997477628.jpg" class="grid-img" />
+                                </div>
+                                <div class="layui-col-md9 btn_s9 click-btn">
+                                    <p><p class="fo select-type">Blast</p>It Provides the distribution of this Species around the world and the specific distribution of each country.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-container layui-containers" style="width: 997px;">
+                            <div class="layui-row">
+                                <div class="layui-col-md3 btn_s">
+                                     <img src="images/home/DNA.jpg" class="grid-img" />
+                                </div>
+                                <div class="layui-col-md9">
+                                    <p><p class="fo">Typing<span class="select-type typing-select cgMLST">cgMLST</span><span class="typing-select">|</span><span class="select-type typing-select CRISPR">CRISPR</span></p>It finds regions of similarity between biological sequences. The program compares nucleotide or protein sequences to sequence databases and calculates the statistical significance.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- <div class="layui-col-md12" id="tool">
+                <div class="layui-col-md4" id="tool-1" onclick="window.location.href='map.html';">
+                    <div class="layui-row grid-demo grid-demo-bg1">
+                        <div class="layui-col-md12">
+                            <p class="grid-class">Map</p>
+                        </div>
+                        <div class="layui-col-md4">
+                            <img src="images/home/map.jpg"" class="grid-img">
+                    </div>
+                            <div class="layui-col-md8">
+                                <p>It Provides the distribution of this Species around the world and the specific distribution of each country.</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="layui-col-md4" onclick="window.location.href='tools.html';" id="tool-2">
+                        <div class="layui-row grid-demo grid-demo-bg1">
+                            <div class="layui-col-md12">
+                                <p class="grid-class">Blast</p>
+                            </div>
+                            <div class="layui-col-md4">
+                                <img src="images/home/997477628.jpg" class="grid-img">
+                    </div>
+                                <div class="layui-col-md8">
+                                    <p>It finds regions of similarity between biological sequences. The program compares nucleotide or protein sequences to sequence databases and calculates the statistical significance.</p>
+                                </div>
+                               
+                            </div>
+                        </div>
+                        <div class="layui-col-md4" id="tool-3" onclick="window.location.href='typing.html';" id="tool-2">
+                            <div class="layui-row grid-demo grid-demo-bg1">
+                                <div class="layui-col-md12">
+                                    <p class="grid-class">Typing</p>
+                                </div>
+                                <div class="layui-col-md4">
+                                    <img src="images/home/DNA.jpg" class="grid-img">
+                    </div>
+                                    <div class="layui-col-md8">
+                                        <p>It allows users to perform Multilocussequence typing (MLST) and/or CRIPSR typing for the submitted bacterial assembly.</p>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-header" id="strains-header_1">Links</div>
+                <div class="layui-card-body" id="strains-body">
+                    <div class="layui-btn-container">
+                        <button class="layui-btn" onclick="window.open('http://www.gdim.cn/')" style="background-color: #acaeae;width: 184px"><i class="layui-icon">&#xe64c;</i>&emsp;GIM</button>
+                        <button class="layui-btn" onclick="window.open('https://www.ncbi.nlm.nih.gov/')" style="background-color: #acaeae;width: 184px"><i class="layui-icon">&#xe64c;</i>&emsp;NCBI</button>
+                        <button class="layui-btn" onclick="window.open('https://www.ebi.ac.uk/')" style="background-color: #acaeae;width: 184px"><i class="layui-icon">&#xe64c;</i>&emsp;EBI</button>
+                        <button class="layui-btn" onclick="window.open('http://www.insect-genome.com/' )" style="background-color: #acaeae; width: 184px"><i class="layui-icon">&#xe64c;</i>&emsp;InsectBase</button>
+                        <button class="layui-btn" onclick="window.open('http://bowtie-bio.sourceforge.net/index.shtml')" style="background-color: #acaeae;width: 184px"><i class="layui-icon">&#xe64c;</i>&emsp;Bowtie</button>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+                    <div class="clear" style="clear: both;"></div>
+                    <div id="footer" style="display: none;"></div>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BALST</title>
+    <link rel="icon" href="images/home/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="statics/bootstrap-3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="statics/layui-v2.4.5/layui/css/layui.css" media="all" />
+    <link href="files/tools/tools.css" type="text/css" rel="stylesheet" />
+    <script src="statics/jquery-1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="statics/bootstrap-3.3.7/js/bootstrap.js"></script>
+    <script type="text/javascript" src="statics/layui-v2.4.5/layui/layui.js"></script>
+    <script src="files/common/librarycommon.js"></script>
+    <script src="files/tools/tools.js"></script>
+</head>
+
+<body>
+    <div id="header" style="display: none;"></div>
+    <div id="title-div">
+        <blockquote class="layui-elem-quote">
+            <h3>Basic Local Alignment Search Tool(BLAST)</h3>
+            <p style="margin-bottom: 10px;"> BLAST finds regions of similarity between biological sequences. The program compares nucleotide or protein sequences to sequence databases and calculates the statistical significance.</p>
+        </blockquote>
+    
+    <div class="layui-row" id="mid-div">
+        <div class="layui-col-md3 md">
+            <a href="javascript:void(0);" onclick="js_blastn()"><div id="mid-left"><div id="mid-left-1"><h3 id=""><strong>blastn</strong></h3><p>nucleotide -> nucleotide</p></div></div></a>
+        </div>
+        <div class="layui-col-md4 ">
+            <a href="javascript:void(0);" onclick="js_blastx()"><div id="img-1"><div id="img-1-div"><h3><strong>blastx</strong></h3><p>tranlated nucleotide -> protein</p></div></div></a>
+            <a href="javascript:void(0);" onclick="js_tblastn()"><div id="img-2"><div id="img-1-div"><h3><strong>tblastn</strong></h3><p>protein -> tranlated nucleotide</p></div></div></a>
+        </div>
+        <div class="layui-col-md3 md">
+            <a href="javascript:void(0);" onclick="js_blastp()"><div id="mid-right"><div id="mid-left-1"><h3 id=""><strong>blastp</strong></h3><p>protein -> protein</p></div></div></a>
+        </div>
+    </div>
+    </div>
+    <div class="clear" style="clear: both;"></div>
+    <div id="footer" style="display: none;"></div>
+</body>
+
+
+</html>

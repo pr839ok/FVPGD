@@ -1,0 +1,463 @@
+#title-div {
+    margin: 0 auto;
+    width: 1000px;
+
+    margin-top: 50px;
+}
+.box_new{
+    padding: 10px 68px;
+}
+.layui-elem-field {
+    background-color: #f2f2f2;
+   /* width: 1000px;*/
+    /*  padding-left: 30px;*/
+}
+
+#Query-title {
+    background-color: #d1cfcf;
+}
+
+#second_md {
+    line-height: 25px;
+    text-align: center;
+    padding-right: 15px;
+}
+
+#pFasta_a {
+    text-align: left;
+}
+
+#fasta_span {
+    margin-left: 5px;
+}
+
+#job-title {
+    margin-top: 10px;
+    margin-left: 21px;
+}
+
+.job_title_input {
+    margin-left: 25px;
+    width: 500px;
+}
+
+#job-textarea {
+    margin-left: 21px;
+    margin-top: 10px;
+}
+
+.query_input_div {
+    width: 586px;
+    min-height: 120px;
+}
+
+#input_span {
+    margin-left: 5px;
+}
+
+#radio-b {
+    margin-top: 20px;
+}
+
+.webuploader-pick {
+    padding: 4px 0;
+    margin-top: 15px;
+}
+
+#radio-sec {
+    clear: both;
+}
+
+#selectFile {
+    position: relative;
+    top: 21px;
+    left: -16px;
+}
+
+#blast-button {
+    margin-left: 112px;
+margin-top: 10px;
+}
+
+#Database-select {
+    position: relative;
+    left: -17px;
+}
+
+.webuploader-container {
+    position: relative;
+    left: -17px;
+}
+
+#subrange-div {
+    margin-bottom: 20px;
+}
+
+#input-title-c {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#input-title {
+    width: 1000px;
+    margin: 0 auto;
+    /* padding: 10px 15px;*/
+    border-width: 1px;
+}
+
+#parameters-1 {
+    width: 476px;
+    height: 260px;
+}
+
+#max-target {
+    background-color: #d1cfcf;
+}
+
+.box-1 {
+    margin-left: 18px;
+    margin-top: 20px;
+}
+
+/*.box-2 {
+    margin-left: 28px;
+    margin-top: 24px;
+}*/
+
+.box-3 {
+    margin-top: 20px;
+}
+
+.layui-colla-content layui-show {}
+
+#jobTitle {
+    width: 1000px;
+    margin: 0 auto;
+    border: 1px solid #e6e6e6;
+    margin-top: 20px;
+    background-color: white;
+}
+
+.result-div {
+    margin-top: 20px;
+}
+
+#blast-result {
+    background-color: #d1cfcf;
+}
+/*
+.filters {
+    margin-left: 90px;
+}*/
+
+.result-box {
+    width: 1000px;
+}
+
+.label-mid {
+    text-align: left;
+    width: 300px
+}
+
+.label-head {
+    width: 175px;
+}
+
+legend {
+    display: block;
+    width: auto;
+    padding: 0;
+    margin-bottom: 0px;
+    /*font-size: 21px;*/
+    line-height: inherit;
+    color: #333;
+    border: 0;
+    border-bottom: 0px solid #e5e5e5;
+    font-size: 17PX;
+}
+.layui-elem-field legend {
+    margin-left: 20px;
+    padding: 0 10px;
+    font-size: 17px;
+    font-weight: 300;
+}
+pre {
+    display: block;
+    padding: 0px;
+    margin: 0 0 0px;
+    font-size: 13px;
+
+    color: none;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: white;
+    border: 0px solid #ccc;
+    border-radius: 0px;
+}
+#rs_l{
+    width: 219px;
+}
+#rs_b{
+    margin-left: 0px;
+}
+.layui-form-item {
+    margin-bottom: 0px;
+}
+/* 小屏幕（平板，大于等于768px） */
+
+@media (max-width: 768px) {
+
+
+
+    #title-div {
+        width: 100%;
+    }
+    .query_input_div {
+        width: 270px;
+        min-height: 120px;
+    }
+    .job_title_input {
+        margin-left: 31px;
+        width: 179px;
+    }
+    #jobTitle {
+        width: 100%;
+    }
+    #input-title {
+        width: 100%;
+    }
+    #input-title-c {
+        width: 100%;
+    }
+    #job-textarea {
+        margin-left: 22px;
+        margin-top: 11px;
+    }
+
+    .webuploader-container {
+        left: 0px;
+    }
+    .layui-elem-field {
+        width: 100%
+    }
+    #blast-button,
+    #selectFile {
+        left: 0px;
+        text-align: center;
+        top: 0px;
+    }
+    #parameters-1 {
+        width: 283px;
+        height: 260px;
+        margin: 0 auto;
+    }
+    .filters {
+        margin-left: 0px;
+    }
+
+    .text2 {
+        margin-left: 19px;
+        margin-top: 10px;
+    }
+    .result-box {
+        width: 100%;
+    }
+    .label-mid {
+        text-align: left;
+        width: 117px
+    }
+    .label-head {
+        width: 122px;
+    }
+    .layui-form-label {
+        padding: 9px 3px;
+    }
+    h3 {
+        font-size: 16px;
+    }
+    .layui-form-select .layui-edge {
+        margin-top: 20px;
+    }
+}
+hr {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+h3 {
+    font-size: 20PX;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
+
+.loadEffect {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    /*margin: 0 auto;
+    margin-top: 100px;*/
+}
+
+.loadEffect span {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #446ccc;
+    position: absolute;
+    -webkit-animation: load 1.04s ease infinite;
+}
+
+@-webkit-keyframes load {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.2;
+    }
+}
+
+.loadEffect span:nth-child(1) {
+    left: 0;
+    top: 50%;
+    margin-top: -8px;
+    -webkit-animation-delay: 0.13s;
+}
+
+.loadEffect span:nth-child(2) {
+    left: 14px;
+    top: 14px;
+    -webkit-animation-delay: 0.26s;
+}
+
+.loadEffect span:nth-child(3) {
+    left: 50%;
+    top: 0;
+    margin-left: -8px;
+    -webkit-animation-delay: 0.39s;
+}
+
+.loadEffect span:nth-child(4) {
+    top: 14px;
+    right: 14px;
+    -webkit-animation-delay: 0.52s;
+}
+
+.loadEffect span:nth-child(5) {
+    right: 0;
+    top: 50%;
+    margin-top: -8px;
+    -webkit-animation-delay: 0.65s;
+}
+
+.loadEffect span:nth-child(6) {
+    right: 14px;
+    bottom: 14px;
+    -webkit-animation-delay: 0.78s;
+}
+
+.loadEffect span:nth-child(7) {
+    bottom: 0;
+    left: 50%;
+    margin-left: -8px;
+    -webkit-animation-delay: 0.91s;
+}
+
+.loadEffect span:nth-child(8) {
+    bottom: 14px;
+    left: 14px;
+    -webkit-animation-delay: 1.04s;
+}
+
+
+
+.loadEffect {
+    width: 70px;
+    height: 70px;
+    position: relative;
+   /* margin: 0 auto;*/
+   /* margin-top: 100px;*/
+}
+
+.loadEffect span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #446ccc;
+    position: absolute;
+    -webkit-animation: load 1.04s ease infinite;
+}
+
+@-webkit-keyframes load {
+    0% {
+        -webkit-transform: scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: scale(.3);
+        opacity: 0.5;
+    }
+}
+
+.loadEffect span:nth-child(1) {
+    left: 0;
+    top: 50%;
+    margin-top: -10px;
+    -webkit-animation-delay: 0.13s;
+}
+
+.loadEffect span:nth-child(2) {
+    left: 14px;
+    top: 14px;
+    -webkit-animation-delay: 0.26s;
+}
+
+.loadEffect span:nth-child(3) {
+    left: 50%;
+    top: 0;
+    margin-left: -10px;
+    -webkit-animation-delay: 0.39s;
+}
+
+.loadEffect span:nth-child(4) {
+    top: 14px;
+    right: 14px;
+    -webkit-animation-delay: 0.52s;
+}
+
+.loadEffect span:nth-child(5) {
+    right: 0;
+    top: 50%;
+    margin-top: -10px;
+    -webkit-animation-delay: 0.65s;
+}
+
+.loadEffect span:nth-child(6) {
+    right: 14px;
+    bottom: 14px;
+    -webkit-animation-delay: 0.78s;
+}
+
+.loadEffect span:nth-child(7) {
+    bottom: 0;
+    left: 50%;
+    margin-left: -10px;
+    -webkit-animation-delay: 0.91s;
+}
+
+.loadEffect span:nth-child(8) {
+    bottom: 14px;
+    left: 14px;
+    -webkit-animation-delay: 1.04s;
+}
+h2{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}

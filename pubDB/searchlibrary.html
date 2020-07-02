@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>search</title>
+    <link rel="icon" href="images/home/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="statics/bootstrap-3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="statics/bootstrap-table-master/src/bootstrap-table.css">
+    <link rel="stylesheet" href="statics/layui-v2.4.5/layui/css/layui.css" media="all" />
+    <!-- <script src="resources/scripts/jquery-1.7.1.min.js"></script> -->
+    <script src="statics/jquery-1.9.1/jquery.min.js"></script>
+    <script src="files/common/librarycommon.js"></script>
+    <script type="text/javascript" src="statics/layui-v2.4.5/layui/layui.js"></script>
+    <script type="text/javascript" src="statics/bootstrap-3.3.7/js/bootstrap.js"></script>
+    <link href="files/search/search.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="statics/js/util/commonUtil.js"></script>
+    <script type="text/javascript" src="statics/bootstrap-table-master/src/bootstrap-table.js"></script>
+    <script type="text/javascript" src="statics/bootstrap-table-master/src/bootstrap-table-zh-CN.js"></script>
+    <script type="text/javascript" src="statics/js/util/FileUtil.js"></script>
+    <!-- <script type="text/javascript" src="statics/bootstrap-table-master/src/bootstrap-table-export.js"></script> -->
+    <!-- <script src="files/search/cache.js"></script>-->
+    <script src="files/search/search.js"></script>
+    <!-- <<script type="text/html" id="selectTpl">
+  <a href="/detail/{{d.title}}" class="layui-table-link">{{d.title}}</a>
+    
+</script>  -->
+</head>
+
+<body>
+    <div id="header"></div>
+    <div id="form-div">
+        <div class="layui-collapse" style="border: 0px;">
+            <div class="layui-colla-item">
+                <h2 class="layui-colla-title"><p>Vibrio parahaemolyticus</p></h2>
+                <div class="line-div" style=""></div>
+                <div class="layui-colla-content layui-show" style="">
+                    <form class="layui-form" action="">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">Gene</label>
+                            <div class="layui-input-inline gene-block ci">
+                                <input type="text" name="title" placeholder="Please enter the gene name" autocomplete="off" class="layui-input" id="txt_search">
+                                <div id="searchresult" style="display: none;"></div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">Region</label>
+                            <div class="layui-input-inline layui-form co" lay-filter="coun">
+                                <select name="coun" id="coun" lay-filter="provSel">
+                                    <option value="">Please select a country</option>
+                                </select>
+                            </div>
+                            <div class="layui-input-inline layui-form co" lay-filter="city">
+                                <select name="city" id="city">
+                                    <option value="">Please select a city</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">Source</label>
+                            <div class="layui-input-inline layui-form ci" lay-filter="source">
+                                <select name="source" id="source" lay-filter="source">
+                                    <option value="">Please select a source</option>
+                                </select>
+                            </div>
+                        </div>
+<!--                         <div class="layui-form-item">
+                            <label class="layui-form-label">Species</label>
+                            <div class="layui-input-inline layui-form ci" lay-filter="species">
+                                <select name="species" id="species" lay-filter="species">
+                                    <option value="">Please select a species</option>
+                                </select>
+                            </div>
+                        </div> -->
+                        <div class="layui-form-item" id="from-button" style="">
+                            <div class="layui-input-inline" id="b-block">
+                                <button class="layui-btn" lay-submit lay-filter="search">search</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="table-div" class="table-responsive">
+            <div class="layui-form-item layui-form-text layui-hide" id="export_table_div" style="margin: 0;display: none;">
+                <a id="export_table" href="javascript:void(0);">Download</a>
+            </div>
+            <table lay-filter="search-result" id="search-result" class="table text-nowrap"></table>
+        </div>
+        <table id="docDateTable" class="table table-hover table-bordered" style="color: #000000">
+        </table>
+    </div>
+    <div id="footer"></div>
+</body>
+
+</html>
